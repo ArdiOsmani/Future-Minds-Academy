@@ -1,0 +1,14 @@
+h1{
+    background-color: aqua;
+    color: orange;
+}
+
+h2{
+    background-color: orange;
+    color: aqua;
+}
+
+p{
+    font-size: 20px;
+    color: blue;
+}
