@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    margin: 5vh 2vh 10vh;
+    width: 50%;
+    height: 20%;
+    box-shadow: 2px 2px 2px 2px rgb(182, 182, 182);
+}
+
+h1{
+    position: relative;
+    font-size: 2em;
+    left: 15px;
+    top: -20px;
+}
+
+p{
+  margin: 0px 0px 30px 15px;
+}
+
+.x-button{
+    position: absolute;
+    text-align: center;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    top: 0;
+    right: 0;
+}
+
+.video-container{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0px 20px 20px 0px;
+    border: 1px solid;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+source, video{
+    margin: 0px 10px 0px 10px;
+}
+
+h3{
+    text-align: center;
+}
