@@ -1,0 +1,31 @@
+body, section, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    font-size: 1em;
+}
+
+h1{
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+
+hr{
+    width: 33%;
+    border-color: rgb(179, 0, 0);
+}
+
+section{
+    width: 100%;
+    height: 25vh; 
+    background-color: tan;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+section:nth-child(odd){
+    background-color: grey;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
