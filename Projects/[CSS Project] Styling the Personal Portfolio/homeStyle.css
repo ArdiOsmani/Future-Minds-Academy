@@ -1,0 +1,111 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url(Photo/matrix.avif);
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.whoIs{
+    background-color: rgb(42, 120, 165);
+    text-align: center;
+    margin: 0 15% 0 15%;
+    border-radius: 20px;
+}
+
+.whoIs:hover{
+    background-color: rgb(27, 79, 109);
+    font-size: 1.1em;
+}
+
+.whoIs img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+h1, p{
+    padding: 20px;
+    text-align: center;
+}
+
+a:link{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul {
+    margin-top: 20px;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav li {
+    margin: 10px;
+    display:inline;
+    background-color: rgb(0, 119, 119);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+nav li:hover{
+    background-color: rgb(0, 75, 75);
+}
+
+.education {
+    background-color: rgb(42, 120, 165);
+    margin: 0 15% 20px 15%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.education:hover {
+    background-color: rgb(27, 79, 109);
+    font-size: 1.1em;
+}
+.education ul{
+    list-style-type: none ;
+}
+
+.education li{
+    margin:10px;
+}
+
+.mySkills{
+    background-color: rgb(42, 120, 165);
+    margin: 0 15% 20px 15%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.mySkills:hover{
+    background-color: rgb(27, 79, 109);
+    font-size: 1.1em;
+}
+
+.mySkills table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.mySkills th{
+    background-color: blue;
+}
+
+.mySkills td{
+    padding: 10px;
+    background-color: rgb(0, 105, 105);
+}
+
+.myProjects{
+    background-color: rgb(42, 120, 165);
+    margin: 0 15% 20px 15%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.myProjects:hover{
+    background-color: rgb(27, 79, 109);
+    font-size: 1.1em;
+}
