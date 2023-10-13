@@ -1,4 +1,5 @@
 body{
+    cursor:url("Photo/icons8-cursor-48.png"), auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: url(Photo/matrix.avif);
     margin: 0;
