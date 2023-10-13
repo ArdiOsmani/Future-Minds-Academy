@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ardi Osmani</title>
     <link rel="icon" type="image/png" href="Photo/Icon.png">
+    <link rel="stylesheet" href="contactStyle.css">
 </head>
 
 <body>
@@ -22,32 +23,35 @@
     </header>
 
     <main>
-        <section>
+        <section class="message">
             <h2>Send me a message</h2>
+            <hr>
             <form>
                 <input type="email" id="email" name="email" placeholder="Email"><br>
 
-                
+
                 <textarea name="comment" rows="4" cols="50" placeholder="What do you want to say?"></textarea><br>
-                <input type="submit" value="Send Message">
+                <input class="submit-btn" type="submit" value="Send Message">
             </form>
         </section>
 
-        <section>
+        <section class="platforms">
             <h2>Contact me in these platforms!</h2>
-            <a href="https://mail.google.com/mail/u/4/#inbox" target="_blank"><img width="120px" height="100px"
-                    src="Photo/Gmail.png" alt="Gmail"></a>
-            <a href="https://www.linkedin.com/in/ardi-osmani-284089291/" target="_blank"><img width="100px"
-                    height="100px" src="Photo/Linkedin.png" alt="Linkedin"></a>
-            <a href="https://github.com/ArdiOsmani" target="_blank"><img width="100px" height="100px"
-                    src="Photo/github.png" alt="GitHub"></a>
+            <hr>
+            <a href="https://mail.google.com/mail/u/4/#inbox" target="_blank"><img src="Photo/Gmail.png"
+                    alt="Gmail"></a>
+            <a href="https://www.linkedin.com/in/ardi-osmani-284089291/" target="_blank"><img src="Photo/Linkedin.png"
+                    alt="Linkedin"></a>
+            <a href="https://github.com/ArdiOsmani" target="_blank"><img src="Photo/github.png" alt="GitHub"></a>
         </section>
     </main>
 
 
     <br>
     <footer>
-        <p>All rights reserved Ardi Osmani &copy;</p>
+        <div class="content">
+            <p>All rights reserved Ardi Osmani&copy;</p>
+        </div>
     </footer>
 </body>
 
