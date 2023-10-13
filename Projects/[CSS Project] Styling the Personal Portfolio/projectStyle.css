@@ -7,6 +7,10 @@ body{
     color: white;
 }
 
+hr{
+    margin: 20px 15% 20px 15%;
+}
+
 
 /*               NAV/Header-Section           */
 
@@ -38,6 +42,8 @@ a:link{
 }
 
 
+
+
 /*              Project-Section           */
 
 section{
@@ -60,6 +66,10 @@ section:hover{
 .prj3-img{
     width:750px;
     height:450px;
+}
+
+section img{
+    margin-bottom: 20px;
 }
 
 

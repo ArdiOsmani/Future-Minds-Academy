@@ -7,6 +7,10 @@ body{
     color: white;
 }
 
+hr{
+    margin: 20px 15% 20px 15%;
+}
+
 /*         Who Is Ardi Osmani - Section               */
 .whoIs{
     background-color: rgb(42, 120, 165);
