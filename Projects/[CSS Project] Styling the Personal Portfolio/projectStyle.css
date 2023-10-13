@@ -1,0 +1,70 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url(Photo/matrix.avif);
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+
+/*               NAV/Header-Section           */
+
+header h1{
+    padding: 20px;
+    text-align: center;
+}
+nav ul {
+    margin-top: 20px;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav li {
+    margin: 10px;
+    display:inline;
+    background-color: rgb(0, 119, 119);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+nav li:hover{
+    background-color: rgb(0, 75, 75);
+}
+
+
+/*              Project-Section           */
+
+section{
+    background-color: rgb(42, 120, 165);
+    text-align: center;
+    margin: 0 15% 0 15%;
+    border-radius: 20px;
+}
+
+section:hover{
+    background-color: rgb(27, 79, 109);
+    font-size: 1.1em;
+}
+
+.prj1-img{
+    width:400px; 
+    height:600px;
+}
+
+.prj3-img{
+    width:750px;
+    height:450px;
+}
+
+
+/*               Footer-Section           */
+
+footer{
+    margin-top: 20px;
+    background-color: rgb(42, 120, 165);
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px 20px 0px 0px;
+    font-size: 2em;
+}
