@@ -7,6 +7,7 @@ body{
     color: white;
 }
 
+/*         Who Is Ardi Osmani - Section               */
 .whoIs{
     background-color: rgb(42, 120, 165);
     text-align: center;
@@ -25,7 +26,7 @@ body{
     border-radius: 50%;
 }
 
-h1, p{
+.whoIs h1, p{
     padding: 20px;
     text-align: center;
 }
@@ -35,6 +36,12 @@ a:link{
     color: white;
 }
 
+/*               NAV/Header-Section           */
+
+header h1{
+    padding: 20px;
+    text-align: center;
+}
 nav ul {
     margin-top: 20px;
     list-style-type: none;
@@ -53,6 +60,8 @@ nav li:hover{
     background-color: rgb(0, 75, 75);
 }
 
+
+/*               Education-Section           */
 .education {
     background-color: rgb(42, 120, 165);
     margin: 0 15% 20px 15%;
@@ -72,6 +81,8 @@ nav li:hover{
     margin:10px;
 }
 
+
+/*               Skills-Section           */
 .mySkills{
     background-color: rgb(42, 120, 165);
     margin: 0 15% 20px 15%;
@@ -98,6 +109,8 @@ nav li:hover{
     background-color: rgb(0, 105, 105);
 }
 
+/*               My Project -Section           */
+
 .myProjects{
     background-color: rgb(42, 120, 165);
     margin: 0 15% 20px 15%;
@@ -108,4 +121,18 @@ nav li:hover{
 .myProjects:hover{
     background-color: rgb(27, 79, 109);
     font-size: 1.1em;
+}
+
+.myProjects p{
+    padding: 10px;
+}
+
+
+/*               Footer-Section           */
+
+footer{
+    background-color: rgb(42, 120, 165);
+    padding: 20px;
+    border-radius: 20px 20px 0px 0px;
+    font-size: 2em;
 }
