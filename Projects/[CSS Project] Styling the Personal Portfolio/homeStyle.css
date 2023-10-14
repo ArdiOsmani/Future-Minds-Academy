@@ -41,6 +41,10 @@ a:link{
     color: white;
 }
 
+a:visited{
+    color:white;
+}
+
 /*               NAV/Header-Section           */
 
 header h1{
