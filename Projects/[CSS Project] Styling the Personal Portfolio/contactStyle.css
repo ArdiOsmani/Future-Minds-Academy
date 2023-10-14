@@ -8,6 +8,10 @@ body{
     color: white;
 }
 
+a{
+    cursor:url("Photo/icons8-cursor-48.png"), auto;
+}
+
 hr{
     margin: 20px 15% 20px 15%;
 }
@@ -50,12 +54,13 @@ a:visited{
     position: relative;
     background-color: rgb(42, 120, 165);
     text-align: center;
-    margin: 0 15% 0 15%;
+    margin: 0 15% 20px 15%;
     border-radius: 20px;
 }
 
 .message:hover{
     background-color: rgb(27, 79, 109);
+    border-style: solid;
 }
 
 input, textarea{
@@ -108,12 +113,13 @@ textarea:active::placeholder{
 .platforms{
     background-color: rgb(42, 120, 165);
     text-align: center;
-    margin: 0 15% 0 15%;
+    margin: 0 15% 20px 15%;
     border-radius: 20px;
 }
 
 .platforms:hover{
     background-color: rgb(27, 79, 109);
+    border-style: solid;
 }
 
 .platforms img{

@@ -8,6 +8,10 @@ body{
     color: white;
 }
 
+a{
+    cursor:url("Photo/icons8-cursor-48.png"), auto;
+}
+
 hr{
     margin: 20px 15% 20px 15%;
 }
@@ -59,6 +63,7 @@ section{
 section:hover{
     background-color: rgb(27, 79, 109);
     font-size: 1.1em;
+    border-style: solid;
 }
 
 .prj1-img{

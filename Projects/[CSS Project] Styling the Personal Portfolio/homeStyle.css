@@ -8,6 +8,15 @@ body{
     color: white;
 }
 
+a{
+    cursor:url("Photo/icons8-cursor-48.png"), auto;
+}
+
+h2{
+    text-align: center;
+}
+
+
 hr{
     margin: 20px 15% 20px 15%;
 }
@@ -16,13 +25,14 @@ hr{
 .whoIs{
     background-color: rgb(42, 120, 165);
     text-align: center;
-    margin: 0 15% 0 15%;
+    margin: 0 15% 20px 15%;
     border-radius: 20px;
 }
 
 .whoIs:hover{
     background-color: rgb(27, 79, 109);
     font-size: 1.1em;
+    border-style: solid;
 }
 
 .whoIs img{
@@ -81,13 +91,22 @@ nav li:hover{
 .education:hover {
     background-color: rgb(27, 79, 109);
     font-size: 1.1em;
+    border-style: solid;
 }
+
 .education ul{
     list-style-type: none ;
 }
 
 .education li{
     margin:10px;
+}
+
+.education-sep{
+    background-color: blueviolet;
+    padding: 5px;
+    margin: 10px 40px 10px 10px;
+    border-radius: 20px;
 }
 
 
@@ -102,6 +121,7 @@ nav li:hover{
 .mySkills:hover{
     background-color: rgb(27, 79, 109);
     font-size: 1.1em;
+    border-style: solid;
 }
 
 .mySkills table{
@@ -130,6 +150,7 @@ nav li:hover{
 .myProjects:hover{
     background-color: rgb(27, 79, 109);
     font-size: 1.1em;
+    border-style: solid;
 }
 
 .myProjects p{
