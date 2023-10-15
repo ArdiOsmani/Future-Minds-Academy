@@ -8,7 +8,7 @@ body{
     color: white;
 }
 
-a{
+a, input:hover{
     cursor:url("Photo/icons8-cursor-48.png"), auto;
 }
 
