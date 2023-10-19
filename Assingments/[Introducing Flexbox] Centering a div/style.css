@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
 }
+
 body {
     margin: 0;
     background-color: rgb(255, 191, 107);
@@ -15,6 +16,6 @@ body {
 .row {
     width: 250px;
     padding: 30px;
-    border: 1px solid black;
+    border: 2px solid black;
     background-color: white;
 }
