@@ -54,6 +54,7 @@ a:visited{
 /*              Project-Section           */
 
 section{
+    width: 70%;
     background-color: rgb(42, 120, 165);
     text-align: center;
     margin: 0 15% 0 15%;
@@ -80,6 +81,12 @@ section img{
     margin-bottom: 20px;
 }
 
+/*
+section img{
+    padding: 20px;
+    width: calc(100% - 40px);
+}
+*/
 
 /*               Footer-Section           */
 
