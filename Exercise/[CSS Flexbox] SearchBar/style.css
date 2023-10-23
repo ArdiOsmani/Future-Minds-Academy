@@ -27,9 +27,17 @@ body{
 
 .search-icon{
     width: 1.5em;
+    transition: width .3s ease;
 }
 
 .search-bar-input::placeholder{
     color:grey;
 }
 
+.search-bar-input:focus + .search-icon{
+    width: 1.8em;
+}
+
+.search-bar:has(.search-bar-input:focus){
+    outline: 1px solid;
+}
