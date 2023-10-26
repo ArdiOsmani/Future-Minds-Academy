@@ -1,0 +1,54 @@
+/* komentet jane e njejta detyre por ne nje menyre tjeter */
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.grid-container{
+    background-color: rgb(246,226,202);
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 8fr; 
+    grid-template-columns:  1fr;
+    /* grid-template-columns:  50px 1fr 50px; */
+}
+
+.greenpart{
+    grid-row: 1/3;
+    grid-column: 1/6;
+    background-color: rgb(74,233,178);
+    border-radius: 0px 0px 50px 50px;
+    z-index: 2;
+}
+
+
+/*
+.text-container{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 1000;
+    grid-row: 2/4;
+    grid-column: 2/3;
+    background-color: white;
+    z-index: 2;
+    padding: 20px;
+    border-radius: 15px 15px 0px 0px;
+}
+*/
+
+.text-container{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 1000;
+    grid-row: 2/4;
+    grid-column: 1;
+    margin: 0px 50px 0px 50px;
+    background-color: white;
+    z-index: 2;
+    padding: 20px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+h1{
+    text-align: center;
+}
+
