@@ -1,0 +1,140 @@
+:root{
+    --leftmenu-word-color:white;
+    --leftmenu-img-size-user:40px;
+    --span-img-color:rgb(255, 255, 255);
+    --active-color:orangered;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+span{
+    color: var(--span-img-color);
+}
+
+.material-icons.md-60{ 
+    font-size: 30px;
+    margin-right: 10px; 
+}
+
+.grid-container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: auto 1fr;
+    grid-template-rows:1fr;
+}
+
+/*=============HEADER PART==============*/
+
+
+/*=============Left Menu==============*/
+.left-side-menu{
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)) ,url(images/sidebar-1.jpg);
+    background-position: center;
+    background-size: cover;
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 0px 20px 0px 20px;
+}
+
+.left-side-menu hr{
+    width: 100%;
+    border: 1px solid rgb(94, 94, 94)
+}
+
+.content{
+    padding: 10px;
+    display: flex;
+}
+
+.left-side-content{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 14rem;
+}
+
+.left-side-content p{
+    color: var(--leftmenu-word-color);
+    font-size: 0.1em;
+}
+
+.left-side-content img{
+    width: var(--leftmenu-img-size-user);
+    height: var(--leftmenu-img-size-user);
+    border-radius: 50%;
+}
+
+.active{
+    background-color: var(--active-color);
+    border-radius: 5px;
+}
+
+.right-side-expand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-side-menu h1{
+    color: var(--leftmenu-word-color);
+    font-size: 1.3rem;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.left-side-menu p{
+    color: var(--leftmenu-word-color);
+    padding: 10px;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+
+/*=============Right Side Main==============*/
+
+.right-side-main{
+    grid-column: 2/3;
+    background-color: grey;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 0px 10% 0px 10%;
+}
+
+.right-side-main h1{
+    padding: 20px;
+    background-color: white;
+}
+
+.content-top{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-top iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.content-bottom{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/*=============FOOTER PART==============*/
