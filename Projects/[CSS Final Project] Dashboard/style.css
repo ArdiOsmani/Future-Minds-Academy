@@ -3,6 +3,8 @@
     --leftmenu-img-size-user:40px;
     --span-img-color:rgb(255, 255, 255);
     --active-color:orangered;
+    --right-side-bColor:rgb(238,238,238);
+    --right-side-contentBcolor:white;
 }
 
 body{
@@ -27,8 +29,6 @@ span{
     grid-template-rows:1fr;
 }
 
-/*=============HEADER PART==============*/
-
 
 /*=============Left Menu==============*/
 .left-side-menu{
@@ -36,7 +36,7 @@ span{
     overflow-x: hidden;
     background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)) ,url(images/sidebar-1.jpg);
     background-position: center;
-    background-size: cover;
+    background-size:cover;
     grid-column: 1/2;
     display: flex;
     flex-direction: column;
@@ -50,9 +50,26 @@ span{
     border: 1px solid rgb(94, 94, 94)
 }
 
-.content{
+.content-active{
+    margin-top: 5px;
     padding: 10px;
     display: flex;
+}
+
+.content-active:hover{
+    cursor: pointer;
+}
+
+.content{
+    margin-top: 5px;
+    padding: 10px;
+    display: flex;
+}
+
+.content:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .left-side-content{
@@ -103,38 +120,328 @@ span{
 /*=============Right Side Main==============*/
 
 .right-side-main{
+    overflow-y: scroll;
+    overflow-x: hidden;
     grid-column: 2/3;
-    background-color: grey;
+    background-color: var(--right-side-bColor);
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    padding: 0px 10% 0px 10%;
+    grid-template-rows: auto auto auto auto;
+    padding: 0px 3% 0px 3%;
+    gap:100px;
 }
 
-.right-side-main h1{
-    padding: 20px;
-    background-color: white;
-}
+/*=============Header==============*/
 
-.content-top{
-    grid-row: 1/2;
-    grid-column: 1/2;
-    background-color: lightblue;
+.header{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    grid-row: 1/2;
+}
+
+.header-left{
+    display: flex;
     align-items: center;
 }
 
-.content-top iframe{
+.header-left p{
+    margin-left: 1rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.circle-button{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--right-side-contentBcolor);
+    box-shadow: 0px 0px 5px 1px #888888;
+}
+
+.circle-button:hover{
+    box-shadow: 0px 0px 15px 1px #888888;
+    cursor: pointer;
+}
+
+.header span{
+    color: grey;
+    font-size: 1.5rem;
+}
+
+.header-right{
+    flex:1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex:1;
+}
+
+.seach-input{
+    padding: 15px 0px 5px 5px;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    border-bottom: 2px solid rgb(212, 212, 212);
+    background-color: var(--right-side-bColor);
+    margin-right: 10px;
+    transition: 0.2s ease-in;
+
+}
+
+.seach-input:hover{
+    border-bottom: 2px solid purple;
+}
+
+.seach-input::placeholder{
+    font-size: 1.2rem;
+    color: rgb(68, 68, 68);
+}
+
+.header span:hover{
+    cursor: pointer;
+}
+
+.spaces{
+    margin-left: 30px;
+}
+
+.notification-container{
+    position: relative;
+    cursor: pointer;
+}
+
+.notification{
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    border: 1px solid white;
+    border-radius: 50%;
+    color: white;
+    font-size:0.9rem ;
+}
+
+#notification:hover .notification-box{
+    visibility: visible;
+}
+
+.notification-box{
+    visibility: hidden;
+    position: absolute;
+    top: 10px;
+    left: -260px;
+    width: 300px;
+    background-color: var(--right-side-contentBcolor);
+    z-index: 10;
+    box-shadow: 0px 0px 5px 2px grey;
+}
+
+.notification-box p{
+    margin: 0;
+    padding: 10px 10px 10px 10px;
+}
+
+.notification-box p:hover{
+    background-color: var(--active-color);
+    color: var(--leftmenu-word-color);
+}
+
+
+
+
+/*=============Global Sales==============*/
+
+.sales-container{
+    grid-row: 2/3;
+    background-color: var(--right-side-contentBcolor);
+    border-radius: 5px;
+    position: relative;
+}
+
+.icon{
+    position: absolute;
+    border-radius: 3px;
+    top: -20px;
+    left: 20px;
+    padding: 30px;
+    box-shadow: 0px 0px 5px 1px #888888;
+}
+
+.green{
+    background-color: rgb(82,172,87);
+}
+
+.title{
+    margin:25px 0px 0px 120px;
+    font-size:1.2rem;
+}
+
+.sales-contats{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 20px;
+}
+.sales-data{
+    padding-right:20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sales-data-stats{
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom:1px solid rgb(221, 221, 221);
+    font-size: 1.3rem;
+}
+
+.sales-data-stats p{
+    margin: 5px;
+}
+
+.sales-data-stats-left{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
+.sales-data-stats-right{
+    display: flex;
+    gap: 20px;
+}
+
+.sales-contats-iframe{
+    flex: 1;
+}
+
+iframe{
     width: 100%;
     height: 100%;
 }
 
-.content-bottom{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+.sales-data-stats img{
+    width: 20px;
+    height: 20px;
 }
 
-/*=============FOOTER PART==============*/
+/*=============Global Sales 4 Boxes==============*/
+
+.sales-boxes{
+    /*
+    display: flex;
+    flex-wrap: wrap;
+    */
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 50px;
+}
+
+.item1{
+    grid-row: 1/2;
+    grid-template-columns: 1/2;
+}
+
+.item2{
+    grid-row: 1/2;
+    grid-template-columns: 2/3;
+}
+
+.item3{
+    grid-row: 2/3;
+    grid-template-columns: 1/2;
+}
+
+.item4{
+    grid-row: 2/3;
+    grid-template-columns: 2/3;
+}
+
+.sales-boxes-items{
+    border-radius: 5px;
+    background-color: var(--right-side-contentBcolor);
+    position: relative;
+    padding: 20px;
+}
+
+.orange{
+    background-color: orange;
+}
+
+.pink{
+    background-color: rgb(224,41,106);
+}
+
+.blue{
+    background-color: rgb(32,193,213);
+}
+
+.sales-boxes-items p{
+    text-align: end;
+}
+
+.sales-boxes-items hr{
+    display: block;
+    background-color: rgb(221, 221, 221);
+}
+
+.sales-boxes-items-numbers{
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.sales-boxes-items-bottom{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.sales-boxes-items-bottom span{
+    color: grey;
+    margin-right: 10px;
+}
+
+/*=============Manage Listing==============*/
+
+
+
+/*=============Footer==============*/
+
+.footer{
+    grid-row: 4/5;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0px 40px 0px;
+}
+
+.footer-container-left{
+    display: flex;
+    gap: 20px;
+    font-weight: 500;
+}
+
+
+.footer-container-right{
+    font-style: italic;
+}
