@@ -131,6 +131,7 @@ span{
     gap:100px;
 }
 
+
 /*=============Header==============*/
 
 .header{
@@ -258,7 +259,9 @@ span{
 }
 
 
-
+.tb-icon{
+    display: none;
+}
 
 /*=============Global Sales==============*/
 
@@ -506,7 +509,7 @@ iframe{
 /*=============Footer==============*/
 
 .footer{
-    grid-row: 5/6;
+    grid-row: 6/7;
 }
 
 .footer-container{
@@ -529,3 +532,54 @@ iframe{
 
 
 /*=============Tablet Display=========*/
+
+@media (max-width:1280px){
+    .left-side-menu{
+        display: none;
+    }
+
+    .sales-contats{
+        margin-top: 0;
+        flex-direction: column;
+        height: 700px;
+    }
+
+    .sales-data-stats{
+        width: 100%;
+    }
+
+    .sales-contats-iframe{
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .circle-button, .header-right {
+        display: none;
+    }
+
+    .header{
+        margin: 0;
+        padding-top: 50px;
+    }
+
+    .header p{
+        font-size: 2rem;
+        margin: 0;
+        font-weight: 400;
+    }
+
+    .tb-icon{
+        display: block;
+    }
+
+    .header span{
+        font-size: 3rem;
+    }
+
+    .manage-list{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 100px;
+    }
+
+}
