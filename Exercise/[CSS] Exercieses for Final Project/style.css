@@ -1,0 +1,93 @@
+body{
+    margin-top: 100px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 1fr 1fr;
+    grid-row: 1fr;
+    background-color: gray;
+    width: auto;
+    height: auto;
+    gap: 50px;
+}
+
+.manage-list-item{
+    position: relative;
+    background-color: white;
+    padding: 0px 15px 0px 15px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+.manage-list-item-img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    z-index: 2;
+    transition:0.2s ease-in-out;
+    top:0;
+}
+
+
+.manage-list-item-animation{
+    position: relative;
+    top: -30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.manage-list-item-animation:hover .manage-list-item-img{
+    top:-25px;
+    cursor: pointer;
+}
+
+
+.manage-list-item-edits{
+    position: absolute;
+    bottom: 0;
+    gap: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.manage-list-item-edits span{
+    cursor: pointer;
+}
+
+.manage-list-item-title{
+    margin: 0;
+    position: relative;
+    top: -15px;
+}
+
+.manage-list-item-paragraph{
+    margin: 0px 0px 20px 0px;
+}
+
+.manage-list-item hr{
+    width: 100%;
+    margin: 0;
+}
+
+.manage-list-item-bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.manage-list-item-bottom-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
