@@ -1,8 +1,14 @@
 :root{
-    --leftmenu-word-color:white;
-    --leftmenu-img-size-user:40px;
+    /*=============Overall================*/
     --span-img-color:rgb(255, 255, 255);
     --active-color:orangered;
+
+    /*==========Left Side Menu==========*/
+    --leftmenu-word-color:white;
+    --leftmenu-img-size-user:40px;
+    --leftmenu-paragraph-size:1rem;
+
+    /*==============Right Side Main===========*/
     --right-side-bColor:rgb(238,238,238);
     --right-side-contentBcolor:white;
 }
@@ -81,7 +87,6 @@ span{
 
 .left-side-content p{
     color: var(--leftmenu-word-color);
-    font-size: 0.1em;
 }
 
 .left-side-content img{
@@ -112,7 +117,7 @@ span{
     color: var(--leftmenu-word-color);
     padding: 10px;
     margin: 0;
-    font-size: 1.3rem;
+    font-size: var(--leftmenu-paragraph-size);
     font-weight: 300;
 }
 
@@ -259,7 +264,7 @@ span{
 }
 
 
-.tb-icon{
+#view-button{
     display: none;
 }
 
@@ -568,7 +573,7 @@ iframe{
         font-weight: 400;
     }
 
-    .tb-icon{
+    #view-button{
         display: block;
     }
 
