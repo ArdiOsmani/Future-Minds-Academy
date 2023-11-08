@@ -23,6 +23,12 @@ span{
     color: var(--span-img-color);
 }
 
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 .material-icons.md-60{ 
     font-size: 30px;
     margin-right: 10px; 
