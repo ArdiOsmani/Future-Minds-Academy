@@ -269,6 +269,10 @@ ul{
     color: var(--leftmenu-word-color);
 }
 
+.header-navigation{
+    display: flex;
+}
+
 
 #view-button{
     display: none;
