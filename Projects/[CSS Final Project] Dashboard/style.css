@@ -202,7 +202,7 @@ ul{
     background-color: var(--right-side-bColor);
     margin-right: 10px;
     transition: 0.2s ease-in;
-
+    margin: 0;
 }
 
 .seach-input:focus{
@@ -251,6 +251,7 @@ ul{
 .notification-box{
     visibility: hidden;
     position: absolute;
+    padding: 3px;
     top: 10px;
     left: -260px;
     width: 300px;
@@ -267,6 +268,7 @@ ul{
 .notification-box p:hover{
     background-color: var(--active-color);
     color: var(--leftmenu-word-color);
+    border-radius: 3px;
 }
 
 .header-navigation{
@@ -328,6 +330,7 @@ ul{
 
 .sales-data-stats p{
     margin: 5px;
+    font-size: 1rem;
 }
 
 .sales-data-stats-left{
@@ -548,7 +551,7 @@ iframe{
 
 /*=============Tablet Display=========*/
 
-@media (max-width:1280px){
+@media (max-width:1000px){
     .left-side-menu{
         display: none;
     }
@@ -595,6 +598,15 @@ iframe{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         gap: 100px;
+    }
+
+
+    .manage-list-item-animation:hover .manage-list-item-img{
+        top:-50px;
+    }
+
+    .manage-list-item-edits span{
+        font-size: 3rem;
     }
 
 }
