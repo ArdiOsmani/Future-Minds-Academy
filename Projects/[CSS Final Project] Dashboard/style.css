@@ -11,6 +11,8 @@
     /*==============Right Side Main===========*/
     --right-side-bColor:rgb(238,238,238);
     --right-side-contentBcolor:white;
+    --right-side-paragraph-color:rgb(0, 0, 0);
+    --right-side-headline-color:gray;
 }
 
 body{
@@ -159,6 +161,7 @@ ul{
 }
 
 .header-left p{
+    color: var(--right-side-paragraph-color);
     margin-left: 1rem;
     font-size: 1.4rem;
     font-weight: 400;
@@ -261,6 +264,7 @@ ul{
 }
 
 .notification-box p{
+    color: var(--right-side-paragraph-color);
     margin: 0;
     padding: 10px 10px 10px 10px;
 }
@@ -329,6 +333,7 @@ ul{
 }
 
 .sales-data-stats p{
+    color: var(--right-side-paragraph-color);
     margin: 5px;
     font-size: 1rem;
 }
@@ -393,12 +398,13 @@ iframe{
 }
 
 .sales-boxes-items p{
+    color: var(--right-side-paragraph-color);
     text-align: end;
 }
 
 .sales-boxes-items hr{
     display: block;
-    background-color: rgb(221, 221, 221);
+    background-color: var(--right-side-headline-color);
 }
 
 .sales-boxes-items-numbers{
@@ -408,6 +414,7 @@ iframe{
 }
 
 .sales-boxes-items-bottom{
+    color: var(--right-side-headline-color);
     position: relative;
     display: flex;
     align-items: center;
@@ -415,7 +422,7 @@ iframe{
 }
 
 .sales-boxes-items-bottom span{
-    color: grey;
+    color: var(--right-side-headline-color);
     margin-right: 10px;
 }
 
@@ -430,7 +437,7 @@ iframe{
 
 .manage-list-item{
     position: relative;
-    background-color: white;
+    background-color: var(--right-side-contentBcolor);
     padding: 0px 15px 0px 15px;
     display: flex;
     width: calc(100%-20px);
@@ -494,6 +501,7 @@ iframe{
 }
 
 .manage-list-item-title{
+    color: var(--right-side-paragraph-color);
     margin: 0;
     position: relative;
     top: -15px;
@@ -502,7 +510,7 @@ iframe{
 
 .manage-list-item-paragraph{
     margin: 0px 0px 20px 0px;
-    color: grey;
+    color: var(--right-side-headline-color);
 }
 
 .manage-list-item hr{
@@ -541,11 +549,13 @@ iframe{
     display: flex;
     gap: 20px;
     font-weight: 500;
+    color: var(--right-side-paragraph-color);
 }
 
 
 .footer-container-right{
     font-style: italic;
+    color: var(--right-side-paragraph-color);
 }
 
 
@@ -581,6 +591,7 @@ iframe{
     }
 
     .header p{
+        color: var(--right-side-paragraph-color);
         font-size: 2rem;
         margin: 0;
         font-weight: 400;
