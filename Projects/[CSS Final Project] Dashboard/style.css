@@ -59,8 +59,10 @@ ul{
 
 .left-side-menu hr{
     width: 100%;
-    border: 1px solid rgb(94, 94, 94)
+    border: 1px solid rgb(94, 94, 94);
+    margin: 0;
 }
+
 
 .content-active{
     margin-top: 5px;
@@ -78,6 +80,7 @@ ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 14rem;
 }
 
 .content:hover{
@@ -90,7 +93,6 @@ ul{
     display: flex;
     justify-content: start;
     align-items: center;
-    width: 14rem;
 }
 
 .left-side-content p{
@@ -139,9 +141,8 @@ ul{
     background-color: var(--right-side-bColor);
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto;
+    grid-template-rows: auto auto;
     padding: 0px 3% 0px 3%;
-    gap:50px;
 }
 
 
@@ -152,7 +153,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding-top: 10px;
-    grid-row: 1/2;
+    margin-bottom: 50px;
 }
 
 .header-left{
@@ -183,7 +184,7 @@ header{
     cursor: pointer;
 }
 
-.header span{
+header span{
     color: grey;
     font-size: 1.5rem;
 }
@@ -218,16 +219,20 @@ header{
     color: rgb(68, 68, 68);
 }
 
-.header span:hover{
+header span:hover{
     cursor: pointer;
 }
 
 .spaces{
     margin-left: 30px;
+    margin-right: 30px;
+}
+
+.spaces-end{
+    margin-left: 30px;
 }
 
 .notification-container{
-    
     position: relative;
     cursor: pointer;
 }
@@ -257,8 +262,8 @@ header{
     visibility: hidden;
     position: absolute;
     padding: 3px;
-    top: 10px;
-    left: -260px;
+    top: 15px;
+    left: -295px;
     width: 300px;
     background-color: var(--right-side-contentBcolor);
     z-index: 10;
@@ -290,10 +295,18 @@ header{
     display: none;
 }
 
+/*=============Main==============*/
+
+main{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    gap:50px;
+}
+
 /*=============Global Sales==============*/
 
 .sales-container{
-    grid-row: 2/3;
     background-color: var(--right-side-contentBcolor);
     border-radius: 5px;
     position: relative;
@@ -316,6 +329,7 @@ header{
 .title{
     margin:25px 0px 0px 120px;
     font-size:1.4rem;
+    color: var(--right-side-paragraph-color);
 }
 
 .sales-data{
@@ -358,6 +372,7 @@ table{
     border-collapse: collapse;
     margin-right: 20px;
     height: auto;
+    color: var(--right-side-paragraph-color);
 }
 
 tr{
@@ -367,10 +382,6 @@ tr{
 td:nth-child(1){
     white-space: nowrap;
     width: 30px;
-}
-
-td:nth-child(2) {
-    width: auto;
 }
 
 
@@ -394,7 +405,6 @@ td{
 /*=============Global Sales 4 Boxes==============*/
 
 .sales-boxes{
-    grid-row: 3/4;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -437,6 +447,7 @@ td{
     font-size: 2rem;
     font-weight: 400;
     text-align: end;
+    color: var(--right-side-paragraph-color);
 }
 
 .sales-boxes-items-bottom{
@@ -460,7 +471,6 @@ td{
 /*=============Manage Listing==============*/
 
 .manage-list{
-    grid-row: 4/5;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
@@ -472,7 +482,6 @@ td{
     background-color: var(--right-side-contentBcolor);
     padding: 0px 15px 0px 15px;
     display: flex;
-    width: calc(100%-20px);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -502,7 +511,7 @@ td{
 }
 
 .manage-list-item-animation:hover .manage-list-item-img{
-    top:-25px;
+    top:-1.5rem;
     cursor: pointer;
 }
 
@@ -518,6 +527,7 @@ td{
 
 .manage-list-item-edits span{
     cursor: pointer;
+    font-size: 1.5rem;
 }
 
 .gray-span{
@@ -543,6 +553,7 @@ td{
 .manage-list-item-paragraph{
     margin: 0px 0px 20px 0px;
     color: var(--right-side-headline-color);
+    font-size: 1rem;
 }
 
 .manage-list-item hr{
@@ -567,7 +578,7 @@ td{
 /*=============Footer==============*/
 
 footer{
-    grid-row: 6/7;
+    margin-top: 50px;
 }
 
 .footer-container{
@@ -584,7 +595,12 @@ footer{
 
 .footer-container-left ul{
     display: flex;
-    gap: 20px;
+    gap: 5%;
+}
+
+.footer-container-left a{
+    text-decoration: none;
+    color: var(--right-side-paragraph-color);
 }
 
 
@@ -594,9 +610,11 @@ footer{
 }
 
 
+
+
 /*=============Tablet Display=========*/
 
-@media (max-width:1000px){
+@media (max-width:1200px){
     .left-side-menu{
         display: none;
     }
@@ -620,12 +638,11 @@ footer{
         display: none;
     }
 
-    .header{
-        margin: 0;
-        padding-top: 50px;
+    header{
+        margin-top: 10px;
     }
 
-    .header p{
+    header p{
         color: var(--right-side-paragraph-color);
         font-size: 2rem;
         margin: 0;
@@ -634,11 +651,9 @@ footer{
 
     #view-button{
         display: block;
+        font-size: 2rem;
     }
 
-    .header span{
-        font-size: 3rem;
-    }
 
     .manage-list{
         grid-template-columns: 1fr;
@@ -648,7 +663,7 @@ footer{
 
 
     .manage-list-item-animation:hover .manage-list-item-img{
-        top:-35px;
+        top:-2rem;
     }
 
     .manage-list-item-edits span{
@@ -665,6 +680,14 @@ footer{
         display: grid;
         grid-template-columns: 1fr;
         grid-column: 1fr 1fr 1fr 1fr;
+    }
+
+    .manage-list-item-animation:hover .manage-list-item-img{
+        top:-2rem;
+    }
+
+    .manage-list-item-edits span{
+        font-size: 2rem;
     }
 
 }
