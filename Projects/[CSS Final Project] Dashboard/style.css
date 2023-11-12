@@ -654,6 +654,11 @@ td{
     margin-top: 30px;
 }
 
+.manage-list-title{
+    margin-bottom: 65px;
+    font-size: 1.5rem;
+}
+
 .manage-list-item{
     position: relative;
     background-color: var(--right-side-contentBcolor);
