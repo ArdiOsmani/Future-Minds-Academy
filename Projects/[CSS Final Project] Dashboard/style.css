@@ -1,6 +1,5 @@
 :root{
     /*=============Overall================*/
-    --span-img-color:rgb(255, 255, 255);
     --active-color:orangered;
 
     /*==========Left Side Menu==========*/
@@ -15,6 +14,9 @@
     --right-side-contentBcolor:white;
     --right-side-paragraph-color:black;
     --right-side-headline-color:gray;
+    --right-side-title-paragraph:1.4rem;
+    --right-side-small-paragraph:1rem;
+    --right-side-iconSpan-color:white;
     
 }
 
@@ -169,6 +171,7 @@ ul{
 
 .material-icons.md-60{ 
     font-size: var(--leftmenu-icons-size);
+    color: var(--leftmenu-word-color);
 }
 
 
@@ -229,7 +232,7 @@ header{
 .header-left p{
     color: var(--right-side-paragraph-color);
     margin-left: 1rem;
-    font-size: 1.4rem;
+    font-size: var(--right-side-title-paragraph);
     font-weight: 400;
 }
 
@@ -443,6 +446,7 @@ main > *:nth-child(3){
 }
 
 .icon{
+    color: var(--right-side-iconSpan-color);
     position: absolute;
     font-size: 10rem;
     border-radius: 3px;
@@ -459,7 +463,7 @@ main > *:nth-child(3){
 
 .title{
     margin:25px 0px 0px 120px;
-    font-size:1.4rem;
+    font-size:var(--right-side-title-paragraph);
     color: var(--right-side-paragraph-color);
 }
 
@@ -519,6 +523,7 @@ table{
     margin-right: 20px;
     height: auto;
     color: var(--right-side-paragraph-color);
+    font-size: var();
 }
 
 tr{
@@ -603,7 +608,7 @@ td{
 .sales-boxes-items-title{
     color: var(--right-side-headline-color);
     text-align: end;
-    font-size: 1rem;
+    font-size: var(--right-side-small-paragraph);
 }
 
 .sales-boxes-items hr{
@@ -656,7 +661,7 @@ td{
 
 .manage-list-title{
     margin-bottom: 65px;
-    font-size: 1.5rem;
+    font-size: var(--right-side-title-paragraph);
 }
 
 .manage-list-item{
@@ -760,7 +765,7 @@ td{
 .manage-list-item-paragraph{
     margin: 0px 0px 20px 0px;
     color: var(--right-side-headline-color);
-    font-size: 1rem;
+    font-size: var(--right-side-small-paragraph);
 }
 
 .manage-list-item hr{
@@ -804,6 +809,7 @@ footer{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap:wrap;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -828,12 +834,14 @@ footer{
 .footer-container-left a{
     text-decoration: none;
     color: var(--right-side-paragraph-color);
+    font-size: var(--right-side-small-paragraph);
 }
 
 
 .footer-container-right{
     font-style: italic;
     color: var(--right-side-paragraph-color);
+    font-size: var(--right-side-small-paragraph);
 }
 
 
@@ -887,9 +895,9 @@ footer{
 
     .manage-list{
         -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         -ms-grid-rows: 1fr 100px 1fr 100px 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         gap: 100px;
     }
 
@@ -920,6 +928,17 @@ footer{
         font-size: 2rem;
     }
 
+}
+
+
+
+@media (max-width:800px){
+    .manage-list{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        -ms-grid-rows: 1fr 100px 1fr 100px 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
 }
 
 /*=============Phone Display=========*/
