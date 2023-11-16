@@ -849,7 +849,7 @@ footer{
 
 /*=============Tablet Display=========*/
 
-@media (max-width:1200px){
+@media (max-width:1000px){
     .left-side-menu{
         display: none;
     }
