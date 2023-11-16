@@ -1,0 +1,325 @@
+body{
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-row: auto auto auto;
+    font-family: 'Roboto';
+    background-color: rgb(15,15,15);
+}
+
+/*============== Header ==============*/
+
+header{
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header span{
+    color: white;
+}
+
+header img{
+    width: 30px;
+}
+
+.left-header{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 20px;
+}
+
+.youtube-icon{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.2rem;
+}
+
+.middle-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.middle-header-input{
+    display: flex;
+    align-items: center;
+}
+
+.middle-header-input input{
+    border: 1px solid rgb(66, 66, 66);
+    background-color: rgb(15,15,15);
+    border-radius: 50px 0px 0px 50px;
+    padding: 0.8rem;
+    width: 400px;
+    color: white;
+    font-size: 1rem;
+}
+
+.middle-header-input input::placeholder{
+    font-size: 1rem;
+    color: rgb(136,136,136);
+}
+
+.middle-header-input input:focus{
+    outline: none;
+    border: 1px solid rgb(62, 62, 255);
+}
+
+.middle-header-input span{
+    border: 1px solid rgb(66, 66, 66); 
+    border-left: none;
+    border-radius: 0px 50px 50px 0px;
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    background-color: rgb(34,34,34);
+    font-size: 1.5rem;
+}
+
+.middle-header-icon{
+    padding: 0.5rem;
+    background-color: rgb(49, 49, 49);
+    border-radius: 50%;
+    margin-right: 50px;
+}
+
+.right-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-header span:last-child{
+    margin-left: 0px;
+}
+
+.right-header span{
+    margin-right: 20px;
+}
+
+/*============== Video ==============*/
+
+.videoWrapper{
+    grid-row: 2/3;
+    grid-column: 1/3;
+    width: auto;
+    height: auto;
+}
+
+iframe{
+    padding: 0;
+    margin: 0;
+    border: none;
+    width: 100%;
+    height: 780px;
+}
+
+/*============== Bottoms Section Left==============*/
+
+.bottoms-section-left{
+    grid-column: 1/2;
+    grid-row: 3/4;
+    padding: 10px 20px 0px 20px;
+}
+
+.bottoms-section-left h2{
+    margin: 0;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.bottoms-section-left hr{
+    border: 1px solid grey;
+    margin-top: 15px;
+}
+
+.bottoms-section-names{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.names-container{
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.names-container-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.names-container-data span{
+    margin: 0;
+    color: white;
+}
+
+.names-container-data p{
+    margin: 0;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.names-container img{
+    width: 45px;
+    border-radius: 50%;
+}
+
+.subscribe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+    background-color: white;
+    color: black;
+    border-radius: 50px;
+    font-size: 1rem;
+}
+
+
+.bottoms-likesection{
+    display: flex;
+    align-items: center;
+}
+
+.like-dislikeButtons{
+    color: white;
+    display: flex;
+    margin-right: 10px;
+}
+
+.likeButton{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 15px 5px 15px;
+    background-color: rgb(39,39,39);
+    font-size: 1rem;
+    border-radius: 50px 0px 0px 50px;
+}
+
+
+.dislikeButton{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 15px 5px 15px;
+    background-color: rgb(39,39,39);
+    font-size: 1rem;
+    border-radius: 0px 50px 50px 0px;
+}
+
+.shareButton{
+    display: flex;
+    align-items: center;
+    padding: 5px 15px 5px 15px;
+    background-color: rgb(39,39,39);
+    border-radius:50px;
+    color: white;
+    gap: 5px;
+}
+
+.likeSection-more{
+    padding: 5px;
+    background-color: rgb(39,39,39);
+    border-radius: 50%;
+    color: white;
+    margin-left: 10px;
+}
+
+/*============== Bottoms Section Right==============*/
+
+.bottoms-section-right{
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    padding: 10px 0px 0px 20px;
+    gap: 10px;
+    margin-right: 50px;
+}
+
+.button-container span{
+    background-color: rgb(51, 51, 51);
+    color: white;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+}
+
+.video-container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.video-card{
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+}
+
+.video-card:hover{
+    background-color: rgb(36, 36, 36);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.video-card-content{
+    margin: 0px 0px 0px 10px;
+    padding: 0;
+    color: gray;
+    font-size: 0.8rem;
+}
+
+.video-card img{
+    width: 200px;
+    border-radius: 10px;
+}
+
+.video-card-content p{
+    padding: 0;
+    margin: 0;
+}
+
+.video-card h3{
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+
+.youtuber-data{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: gray;
+    font-size: 0.8rem;
+}
+
+.youtuber-data span{
+    color: gray;
+    font-size: 0.8rem;
+}
+
+.timer{
+    position: absolute;
+    font-size:0.8rem;
+    bottom: 5px;
+    left: 150px;
+    color: white;
+    background-color: rgba(0, 0, 0,0.8);
+    padding: 3px 5px 3px 5px;
+    border-radius: 5px;
+}
