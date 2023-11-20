@@ -236,6 +236,41 @@ iframe{
     margin-left: 10px;
 }
 
+
+/*============== Coment Container==============*/
+
+.coments-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.coment-card{
+    display: flex;
+}
+
+.coment-card img{
+    width: 45px;
+    border-radius: 50%;
+}
+.coment-data{
+    padding: 0px 0px 0px 10px;
+    font-size: 0.9rem;
+}
+.coment-data p{
+    margin: 0;
+    color: white;
+}
+
+.coment-time{
+    color: gray;
+}
+
+.coment{
+    padding: 5px 0px 5px 0px;
+}
+
+
 /*============== Bottoms Section Right==============*/
 
 .bottoms-section-right{
