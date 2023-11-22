@@ -1,1 +1,1 @@
-alert('Hello world');
+alert('Lorem Ipsum');
