@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="hello!">
+    <script>
+        let language = prompt('Type a language!');
+
+        if(language == 'sq'){
+            document.getElementById('input').placeholder = 'Filan Fisteku';
+        }
+        else if(language == 'en'){
+            document.getElementById('input').placeholder = 'John Doe';
+        }
+        else if(language == 'de'){
+            document.getElementById('input').placeholder = 'Max Maxerman';
+        }
+        else{
+            document.getElementById('input').placeholder = 'Unknown Language!';
+            throw new Error('Unknown Language!');
+        }
+    </script>
+</body>
+</html>
