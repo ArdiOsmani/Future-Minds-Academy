@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number = parseInt(prompt('Type a number from 1 - 100'));
+        let count = 1;
+
+        if(isNaN(number) || number < 0){
+            console.log('The value should be a number and it should be positive');
+        }
+        else{
+            while(count <= number){
+                console.log(count);
+                count++;
+            }
+        }
+    </script>
+</body>
+</html>
