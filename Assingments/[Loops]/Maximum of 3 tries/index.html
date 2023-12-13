@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let password;
+        let count = 0;
+        const realPassword = 12341234;
+    
+        do {
+            password = parseInt(prompt(`Type the correct password`));
+            count++;
+        } while (password !== realPassword && count < 3);
+    
+        if (password == realPassword) {
+            console.log('Welcome!');
+        }
+        else{
+            console.log('Try later!');
+        }
+    </script>
+</body>
+</html>
