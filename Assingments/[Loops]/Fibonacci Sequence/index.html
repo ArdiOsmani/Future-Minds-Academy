@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-         let x = parseInt(prompt('Enter a number:'));
-    
-    if (isNaN(x) || x < 1) {
-        console.log('Invalid input. Please enter a positive number greater than 0.');
-    } else {
-        let prev1 = 1;
-        let prev2 = 1;
+        let input = parseInt(prompt('Enter a number:'));
 
-        console.log('The first ' + x + ' numbers from the Fibonacci Sequence are:');
+        if (isNaN(input) || x < 1) {
+            console.log('Please enter a positive number greater than 0.');
+        } else {
+            let num1 = 1;
+            let num2 = 1;
+            let currentNum;
 
-        for (let i = 0; i < x; i++) {
-            if (i < 2) {
-                console.log('1');
-            } else {
-                let current = prev1 + prev2;
-                console.log(current);
-                prev1 = prev2;
-                prev2 = current;
+            console.log('The first ' + input + ' numbers from the Fibonacci Sequence are:');
+
+            for (let i = 0; i < x; i++) {
+                if (i < 2) {
+                    console.log('1');
+                } else {
+                    currentNum = num1 + num2;
+                    console.log(current);
+                    num1 = num2;
+                    num2 = current;
+                }
             }
         }
-    }
     </script>
 </body>
+
 </html>
