@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const inputString1 = '     hello, dolly! ';
+        const firstLetterUppercase = inputString1.trim().toUpperCase();
+        console.log(firstLetterUppercase); 
+
+
+        const timeString = '05:36 PM';
+        const [hours, minutes, period] = timeString.split(/[:\s]+/);
+        console.log(`Hours: ${parseInt(hours)}, Minutes: ${parseInt(minutes)}, Period: ${period}`);
+
+
+
+        const temperatureString1 = 'New York, 15°C';
+        const temperatureString2 = 'Ottawa, -4°C';
+        const temperatureString3 = 'Prishtina, 50°F';
+
+        const extractCityAndTemperature = (temperatureString) => {
+            const [, city, temperature] = temperatureString.match(/([^\d]+)([+-]?\d+(\.\d+)?)([°CF])?/);
+            return { city: city.trim(), temperature: parseFloat(temperature) };
+        };
+
+        const result1 = extractCityAndTemperature(temperatureString1);
+        const result2 = extractCityAndTemperature(temperatureString2);
+        const result3 = extractCityAndTemperature(temperatureString3);
+
+        console.log(result1);
+        console.log(result2);
+        console.log(result3); 
+    </script>
+</body>
+
+</html>
