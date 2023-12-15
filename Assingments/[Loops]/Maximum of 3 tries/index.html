@@ -9,14 +9,14 @@
     <script>
         let password;
         let count = 0;
-        const realPassword = 12341234;
+        const realPassword = "12341234";
     
         do {
-            password = parseInt(prompt(`Type the correct password! Tries left: ${3-count}`));
+            password = prompt(`Type the correct password! Tries left: ${3-count}`);
             count++;
         } while (password !== realPassword && count < 3);
     
-        if (password == realPassword) {
+        if (password === realPassword) {
             console.log('Welcome!');
         }
         else{
