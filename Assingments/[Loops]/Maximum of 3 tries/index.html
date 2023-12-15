@@ -12,7 +12,7 @@
         const realPassword = 12341234;
     
         do {
-            password = parseInt(prompt(`Type the correct password`));
+            password = parseInt(prompt(`Type the correct password! Tries left: ${3-count}`));
             count++;
         } while (password !== realPassword && count < 3);
     
