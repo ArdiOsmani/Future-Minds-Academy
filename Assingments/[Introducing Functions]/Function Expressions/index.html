@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let printHelloWorld =() => {
+            for (let i = 0; i < 10; i++) {
+                console.log("Hello World");
+            }
+        }
+
+        let printString = (inputString)=> {
+            console.log(inputString);
+        }
+
+        let convertKilometersToMiles =(kilometers) => console.log(kilometers * 0.621371);
+
+        function generateWelcomeMessage(name, surname) {
+            const message = `Welcome, ${name} ${surname}`;
+            return message;
+        }
+
+        function isWorkingCitizen(age) {
+            return age >= 18 && age < 65;
+        }
+
+        function isEven(number) {
+            return number % 2 == 0;
+        }
+
+        //Function Calls
+        printHelloWorld();
+        printString("Ardi Osmani");
+        convertKilometersToMiles(200);
+
+    </script>
+</body>
+
+</html>
