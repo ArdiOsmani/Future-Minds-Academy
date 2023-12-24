@@ -20,11 +20,11 @@
         console.log(hour, min, meridiem);
 
         //Extract the city in a string variable and the temperature in a number variable
-        //let temperature = "New York, 15°C";
-        //let city = temperature.substring(0, temperature.indexOf(","));
-        //let temp = temperature.substring(temperature.indexOf(",") + 2, temperature.length - 1)
+        let temperature = "New York, 15°C";
+        let city = temperature.substring(0, temperature.indexOf(","));
+        let temp = parseInt(temperature.substring(temperature.indexOf(",") + 2, temperature.length - 2));
 
-        //console.log(city, temp);
+        console.log(city, temp);
     </script>
 </body>
 </html>
