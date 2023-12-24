@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //extract the first letter of the first word and make it uppercase
+        let text = '     hello, dolly! ';
+        console.log(text.trim().toUpperCase().charAt(0))
+
+        //extract the hours part in a number variable, the minutes part in another number variable, and the 'PM' in another string variable
+        let time = '05:36 PM';
+        let hour = parseInt(time.substring(0,2));
+        let min = parseInt(time.substring(3,5));
+        let meridiem = time.substring(6,8);
+        
+        console.log(hour, min, meridiem);
+
+        //Extract the city in a string variable and the temperature in a number variable
+        //let temperature = "New York, 15°C";
+        //let city = temperature.substring(0, temperature.indexOf(","));
+        //let temp = temperature.substring(temperature.indexOf(",") + 2, temperature.length - 1)
+
+        //console.log(city, temp);
+    </script>
+</body>
+</html>
