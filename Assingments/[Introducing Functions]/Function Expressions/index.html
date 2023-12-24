@@ -22,23 +22,25 @@
 
         let convertKilometersToMiles =(kilometers) => console.log(kilometers * 0.621371);
 
-        function generateWelcomeMessage(name, surname) {
-            const message = `Welcome, ${name} ${surname}`;
-            return message;
-        }
+        let generateWelcomeMessage =(name, surname) => console.log(`Welcome, ${name} ${surname}`);
 
-        function isWorkingCitizen(age) {
+        let isWorkingCitizen =(age) => {
             return age >= 18 && age < 65;
         }
 
-        function isEven(number) {
+        let isEven =(number) => {
             return number % 2 == 0;
         }
 
         //Function Calls
         printHelloWorld();
         printString("Ardi Osmani");
+
         convertKilometersToMiles(200);
+        generateWelcomeMessage("Ardi", "Osmani");
+        
+        console.log(isWorkingCitizen(20));
+        console.log(isEven(15));
 
     </script>
 </body>
