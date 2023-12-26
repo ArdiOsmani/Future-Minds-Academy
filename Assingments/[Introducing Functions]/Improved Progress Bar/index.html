@@ -22,19 +22,19 @@
         //returns true or false whether or not the number is a number from 0 to 100 or not
         let isValidPrecentage = (percetageNum) => percetageNum >= 0 && percetageNum <= 100;
 
-        
+
         //returns the color of the progress bar as a string
         function getProgressColor(percentage) {
             let color;
 
             if (percentage <= 20) {
-                color = 'darkred';
+                color = 'red';
             }
             else if (percentage <= 50) {
                 color = 'orange';
             }
             else if (percentage <= 80) {
-                color = 'lightgreen';
+                color = 'rgb(90, 156, 90)';
             }
             else {
                 color = 'green';
