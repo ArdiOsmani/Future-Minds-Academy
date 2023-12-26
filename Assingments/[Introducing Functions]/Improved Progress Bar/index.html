@@ -18,9 +18,11 @@
     </div>
 
     <script>
+
         //returns true or false whether or not the number is a number from 0 to 100 or not
         let isValidPrecentage = (percetageNum) => percetageNum >= 0 && percetageNum <= 100;
 
+        
         //returns the color of the progress bar as a string
         function getProgressColor(percentage) {
             let color;
@@ -41,6 +43,7 @@
             return color;
         }
 
+
         //modifies the progress bar element to have the width, tooltip, and color as specified from the parameters
         function modifyProgressBar(num, color) {
             let progressBar = document.getElementById('bar');
@@ -49,7 +52,7 @@
             progressBar.setAttribute('title', num + '%');
         }
 
-        /*
+
         //uses all of the above functions to modify the progress bar
         function setProgress(num) {
             if(isValidPrecentage(num)){
@@ -69,7 +72,7 @@
 
             setProgress(rndInt);
         }, 2000);
-        */
+
     </script>
 </body>
 
