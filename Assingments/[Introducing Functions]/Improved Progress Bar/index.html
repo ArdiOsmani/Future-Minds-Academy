@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="progress-bar-container">
+        <span class="indicator">100%</span>
+        <div class="progress-bar-wrapper">
+            <div id="bar" class="progress-bar" title="100%"></div>
+        </div>
+        <span class="indicator">0%</span>
+    </div>
+
+    <script>
+        //returns true or false whether or not the number is a number from 0 to 100 or not
+        let isValidPrecentage = (percetageNum) => percetageNum >= 0 && percetageNum <= 100;
+
+        //returns the color of the progress bar as a string
+        function getProgressColor(percentage) {
+            let color;
+
+            if (percentage <= 20) {
+                color = 'darkred';
+            }
+            else if (percentage <= 50) {
+                color = 'orange';
+            }
+            else if (percentage <= 80) {
+                color = 'lightgreen';
+            }
+            else {
+                color = 'green';
+            }
+
+            return color;
+        }
+
+        //modifies the progress bar element to have the width, tooltip, and color as specified from the parameters
+        /*function modifyProgressBar(num, color) {
+            let progressBar = document.getElementById('bar');
+            progressBar.style.backgroundColor = color;
+            progressBar.style.height = num + '%';
+            progressBar.setAttribute('title', num + '%');
+        }
+
+
+        //uses all of the above functions to modify the progress bar
+        function setProgress(num) {
+            if(isValidPrecentage(num)){
+                let color = getProgressColor(num);
+
+                modifyProgressBar(num, color);
+            }
+            else{
+                throw new Error("Error: Number Not Found!");
+            }
+        }
+
+
+        //interval that runs every 2 secons and changes the percentage to a random value from 0 to 100
+        setInterval(()=>{
+            const rndInt = Math.floor(Math.random() * 100) + 1;
+
+            setProgress(rndInt);
+        }, 2000);
+        */
+    </script>
+</body>
+
+</html>
