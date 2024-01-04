@@ -1,25 +1,28 @@
-let intervalsTitle;
+let intervals;
 let title1 = document.title;
 let favicon1 = document.querySelector('link[rel="icon"]').href;
 
 function startNotification(text) {
 
-    let favicon = document.querySelector('link[rel="icon"]');
+    if (intervals) {
+        endNotification();
+    }
 
-    intervalsTitle = setInterval(() => {
+    let favicon = document.querySelector('link[rel="icon"]');
+    intervals = setInterval(() => {
         if (document.title == title1) {
             document.title = text;
             favicon.href = 'bell.png';
         } else if (document.title == text) {
             document.title = title1;
-            favicon.href = 'insta.png';
+            favicon.href = favicon1;
         }
     }, 1000);
 }
 
 function endNotification() {
     document.title = title1;
-    let favicon = document.querySelector('link[rel="icon"]').href=favicon1;
-    clearInterval(intervalsTitle);
+    document.querySelector('link[rel="icon"]').href=favicon1;
+    clearInterval(intervals);
 }
 
