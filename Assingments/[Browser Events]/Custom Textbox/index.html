@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body{
+            
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="lineByKey"></h1>
+    </div>
+    <script>
+
+        let line = '';
+        let lineByKey= document.getElementById('lineByKey');
+
+        document.addEventListener('keypress', (e)=>{
+            let character = e.key;
+
+            line += character;
+            lineByKey.textContent=line;
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace') {
+                line = lineByKey.textContent.slice(0, -1);
+                lineByKey.textContent=line;
+            }
+        });
+    </script>
+</body>
+</html>
