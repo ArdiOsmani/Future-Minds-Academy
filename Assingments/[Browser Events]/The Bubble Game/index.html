@@ -19,11 +19,12 @@
             cursor: pointer;
         }
     </style>
-    <title>Pop the Bubbles!</title>
+    <title>Document</title>
 </head>
 <body>
     <script>
         for (let i = 0; i < 300; i++) {
+            
             let randomSize = Math.floor(Math.random() * 40) + 20;
             let randomColor = Math.floor(Math.random() * 16777215).toString(16);
             let randomPositionY = Math.floor(Math.random() * 100) + 1;
@@ -48,6 +49,7 @@
         }
 
         document.body.addEventListener('click', (event) => {
+
             let clickedElement = event.target;
             if (clickedElement.classList.contains('bobble')) {
                 popBobble(clickedElement);
