@@ -38,13 +38,6 @@
             document.body.appendChild(bobble);
         }
 
-        document.body.addEventListener('click', (event) => {
-            let clickedElement = event.target;
-            if (clickedElement.classList.contains('bobble')) {
-                popBobble(clickedElement);
-            }
-        });
-
         function popBobble(bobble) {
 
             bobble.style.transform = 'scale(0)';
@@ -53,6 +46,13 @@
                 bobble.remove();
             }, 300);
         }
+
+        document.body.addEventListener('click', (event) => {
+            let clickedElement = event.target;
+            if (clickedElement.classList.contains('bobble')) {
+                popBobble(clickedElement);
+            }
+        });
 
     </script>
 </body>
