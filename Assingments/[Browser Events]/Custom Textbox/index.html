@@ -11,12 +11,18 @@
             background-color: black;
             color: white;
         }
+
+        pre{
+            font-size: 2rem;
+        }
     </style>
 </head>
 <body>
+
     <div>
-        <h1 id="lineByKey"></h1>
+        <pre id="lineByKey"></pre>
     </div>
+    
     <script>
 
         let line = '';
@@ -24,6 +30,12 @@
 
         document.addEventListener('keypress', (e)=>{
             let character = e.key;
+
+            if(e.key ==='Enter'){
+                line+='\n';
+                lineByKey.textContent=line;
+                return;
+            }
 
             line += character;
             lineByKey.textContent=line;
