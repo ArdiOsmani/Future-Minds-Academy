@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <input type="range" id="txtRange" min="20" max="60" >
+
+    <h1 id="txt">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor odit omnis nemo reiciendis magnam, mollitia numquam, at vero delectus odio veritatis inventore maiores eligendi laboriosam beatae illo eius sint fugit.</h1>
+    <script>
+        let range = document.getElementById('txtRange');
+        let text = document.getElementById('txt');
+
+        range.addEventListener('input', ()=>{
+            let value = range.value;
+            text.style.fontSize= value + 'px';
+        })
+    </script>
+</body>
+</html>
