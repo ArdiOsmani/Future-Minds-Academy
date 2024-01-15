@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
         body{
             margin: 0;
             background-color: grey;
@@ -12,17 +13,35 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
+
+
+        .display {
+            height: 60px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items:flex-start;
+            padding:0px 8px 0px 8px;
+            margin-bottom: 30px;
+        }
+
+        h4,
+        h1 {
+            margin: 0;
+            margin-left: auto;
+        }
+
+        h1{
+            height: 50px;
+        }
+
 
         .containerCal{
             background-color: white;
             padding: 30px;
-        }
-
-        h3{
-            text-align: right;
-            border: 1px solid black;
-            padding: 8px 4px 8px 4px;
         }
 
         .numButtons{
@@ -38,48 +57,263 @@
     </style>
 </head>
 <body>
+    <div class="history">
+
+    </div>
 
     <div class="containerCal">
-        <h3>Cal...</h3>
+
+        <div class="display">
+            <h4 id="displayScnd">hello</h4>
+            <h1 id="displayMain">Cal...</h1>
+        </div>
+        
         <div class="numButtons">
+
             <button id="num1">1</button>
             <button id="num2">2</button>
-            <button>3</button>
+            <button id="num3">3</button>
             <button id="plus">+</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
+
+            <button id="num4">4</button>
+            <button id="num5">5</button>
+            <button id="num6">6</button>
+            <button id="minus">-</button>
+
+            <button id="num7">7</button>
+            <button id="num8">8</button>
+            <button id="num9">9</button>
+            <button id="mul">*</button>
+
+
+            <button id="clear">CLR</button>
+            <button id="num0">0</button>
             <button id="equal">=</button>
-            <button>0</button>
+            <button id="div">/</button>
         </div>
     </div>
 
     <script>
         let numbers='';
         let firstNumber='';
+        let value;
+
+        let displayMain= document.getElementById('displayMain');
+        let displayScnd =document.getElementById('displayScnd');
 
         let plus = document.getElementById('plus');
+        let minus = document.getElementById('minus');
+        let mul = document.getElementById('mul');
+        let div = document.getElementById('div');
         let equal = document.getElementById('equal');
 
         let num1 = document.getElementById('num1');
         let num2 = document.getElementById('num2');
+        let num3 = document.getElementById('num3');
+        let num4 = document.getElementById('num4');
+        let num5 = document.getElementById('num5');
+        let num6 = document.getElementById('num6');
+        let num7 = document.getElementById('num7');
+        let num8 = document.getElementById('num8');
+        let num9 = document.getElementById('num9');
+        let num0 = document.getElementById('num0');
 
+
+        //The numbers;
         num1.addEventListener('click', ()=>{
             numbers+='1';
+            displayMain.textContent=numbers;
         })
 
         num2.addEventListener('click', ()=>{
             numbers+='2';
+            displayMain.textContent=numbers;
         })
 
-        plus.addEventListener('click', ()=>{
-            firstNumber = numbers;
-            firstNumber = parseInt(firstNumber);
+        num3.addEventListener('click', ()=>{
+            numbers+='3';
+            displayMain.textContent=numbers;
+        })
 
+        num4.addEventListener('click', ()=>{
+            numbers+='4';
+            displayMain.textContent=numbers;
+        })
+
+        num5.addEventListener('click', ()=>{
+            numbers+='5';
+            displayMain.textContent=numbers;
+        })
+
+        num6.addEventListener('click', ()=>{
+            numbers+='6';
+            displayMain.textContent=numbers;
+        })
+
+        num7.addEventListener('click', ()=>{
+            numbers+='7';
+            displayMain.textContent=numbers;
+        })
+
+        num8.addEventListener('click', ()=>{
+            numbers+='8';
+            displayMain.textContent=numbers;
+        })
+
+        num9.addEventListener('click', ()=>{
+            numbers+='9';
+            displayMain.textContent=numbers;
+        })
+
+        num0.addEventListener('click', ()=>{
+            numbers+='0';
+            displayMain.textContent=numbers;
+        })
+        
+
+        //The Logic =====PLUS===== ;
+        plus.addEventListener('click', ()=>{
+
+            if(value !== undefined){
+
+                firstNumber = value + ' +';
+                displayScnd.textContent = firstNumber;
+                numbers = '';
+                displayMain.textContent = numbers;
+            }
+
+
+            if(firstNumber.slice(-1).trim() ==='+'){
+                return;
+            }
+
+            numbers += ' +'; 
+            displayScnd.textContent =numbers;
+
+            firstNumber = numbers;
+            numbers ='';
+            displayMain.textContent='';
+        })
+
+        //The Logic =====MINUS===== ;
+        minus.addEventListener('click', ()=>{
+
+            if(value !== undefined){
+
+                firstNumber = value + ' -';
+                displayScnd.textContent = firstNumber;
+                numbers = '';
+                displayMain.textContent = numbers;
+            }
+
+
+            if(firstNumber.slice(-1).trim() =='-'){
+                return;
+            }
+
+            numbers += ' -'; 
+            displayScnd.textContent =numbers;
+
+            firstNumber = numbers;
+            numbers ='';
+            displayMain.textContent='';
+        })
+
+
+        //The Logic =====MUL===== ;
+        mul.addEventListener('click', ()=>{
+
+            if(value !== undefined){
+
+                firstNumber = value + ' *';
+                displayScnd.textContent = firstNumber;
+                numbers = '';
+                displayMain.textContent = numbers;
+            }
+
+
+            if(firstNumber.slice(-1).trim() =='*'){
+                return;
+            }
+
+            numbers += ' *'; 
+            displayScnd.textContent =numbers;
+
+            firstNumber = numbers;
+            numbers ='';
+            displayMain.textContent='';
+        })
+
+
+
+        //The Logic =====DIV===== ;
+        div.addEventListener('click', ()=>{
+
+            if(value !== undefined){
+
+                firstNumber = value + ' /';
+                displayScnd.textContent = firstNumber;
+                numbers = '';
+                displayMain.textContent = numbers;
+            }
+
+
+            if(firstNumber.slice(-1).trim() =='/'){
+                return;
+            }
+
+            numbers += ' /'; 
+            displayScnd.textContent =numbers;
+
+            firstNumber = numbers;
+            numbers ='';
+            displayMain.textContent='';
+        })
+        
+
+
+
+
+        //The Logic =====EQUAL===== ;
+        equal.addEventListener('click', ()=>{
+            numbers = parseFloat(numbers);
+            
+            let symbol = firstNumber.slice(-1).trim();
+            let number2 = parseFloat(firstNumber.substring(0, firstNumber.length - 2));
+            
+
+            if(symbol === '+'){
+                value = number2 + numbers;
+                displayMain.textContent=value;
+                displayScnd.textContent='';
+            }
+            else if(symbol === '-'){
+                value = number2 - numbers;
+                displayMain.textContent=value;
+                displayScnd.textContent='';
+            }
+            else if(symbol === '*'){
+                value = number2 * numbers;
+                displayMain.textContent=value;
+                displayScnd.textContent='';
+            }
+            else if(symbol === '/'){
+                value = number2 / numbers;
+                displayMain.textContent=value;
+                displayScnd.textContent='';
+            }
+            
+        })
+
+
+        //The Logic =====CLEAR===== ;
+        clear.addEventListener('click', ()=>{
+            numbers='';
+            firstNumber='';
+            value;
+
+            displayMain.textContent=numbers;
+            displayScnd.textContent=numbers;
         })
 
         
