@@ -7,19 +7,55 @@
     <title>Document</title>
 
     <style>
-        body{
+        *{
             margin: 0;
         }
 
+        body{
+            background-color: rgb(0, 80, 80);
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .title{
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
         .container{
-            display: grid;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
             grid-template-columns: 1fr 1fr 1fr 1fr;
+            
+        }
+
+        .card{
+            width: 300px;
+            padding: 20px;
+            background-color: rgb(0, 136, 136);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .highestRated{
+            background-color: gold;
+        }
+
+        img{
+            width: 300px;
+        }
+
+        .card-data{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0px 10px 0px;
         }
     </style>
 </head>
 
 <body>
-
+    <h1 class="title">THE HIGHEST RATED MOVIES!</h1>
     <div id="container" class="container">
 
     </div>
@@ -58,6 +94,7 @@
             }
         ];
 
+        //SORTED
         movies = movies.sort((a, b)=>{
             if(a.rating > b.rating)
                 return -1;
@@ -68,19 +105,45 @@
         });
 
 
-        //The Card Part
-
+        
+        //================================= The Card Part ====================================
         let container = document.getElementById('container');
         
 
-        movies.forEach((movie)=>{
+        movies.forEach((movie, index)=>{
+            let actors = movie.mainActors.reduce((string,actors)=> string += actors+'; ', '');
+
             let card = document.createElement('div');
-            let h3 = document.createElement('h3');
-            
-            h3.textContent= movie.name;
+            let img = document.createElement('img');
+            let title = document.createElement('h3');
+            let cardData = document.createElement('div');
+            let pDate = document.createElement('p');
+            let pRating = document.createElement('p');
+            let pMainActor = document.createElement('p');
+
+
+
+            if(index == 0){
+                card.classList.add('highestRated');
+            }
+            card.classList.add('card');
+            img.setAttribute('src', 'movieImg.jpg');
+            title.textContent= movie.name;
+            cardData.classList.add('card-data');
+            pDate.textContent ='Date: ' + movie.releaseYear;
+            pRating.textContent ='Rating: ' +movie.rating;
+            pMainActor.classList.add('card-actor');
+            pMainActor.textContent ='Actors: '+ actors;
+
+
             
             container.appendChild(card);
-            card.appendChild(h3);
+            card.appendChild(img);
+            card.appendChild(title);
+            card.appendChild(cardData);
+            cardData.appendChild(pDate);
+            cardData.appendChild(pRating);
+            card.appendChild(pMainActor);
         });
     </script>
 </body>
