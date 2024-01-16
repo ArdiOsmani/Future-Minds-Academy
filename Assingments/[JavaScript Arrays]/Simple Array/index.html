@@ -6,16 +6,24 @@
     <title>Document</title>
 </head>
 <body>
+    <ol id="list">
 
+    </ol>
     <script>
-        let list = [];
+        let taskList = [];
+
+        let list = document.getElementById('list');
 
         for(let i = 0; i<5;i++){
-            let answer = prompt('Tasks for today?');
-            list.push(answer);
+            let answer = prompt('Write a task for today');
+            taskList.push(answer);
         }
 
-        console.log(list);
+        taskList.forEach((task) => {
+            let tasks = document.createElement('li');
+            tasks.textContent = task;
+            list.appendChild(tasks);
+        });
     </script>
 </body>
 </html>
