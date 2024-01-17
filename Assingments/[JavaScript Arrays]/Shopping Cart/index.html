@@ -16,6 +16,7 @@
             display: flex;
             justify-content: center;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: 20px;
         }
 
         .shopping-cart {
@@ -23,7 +24,8 @@
             display: flex;
             flex-direction: column;
             box-shadow: 0px 0px 20px grey;
-            display: none;;
+            display: none;
+            ;
         }
 
         .card {
@@ -45,25 +47,43 @@
             justify-content: space-between;
         }
 
-        .notification{
+        .notification {
             width: 30px;
+            position: relative;
         }
 
-        .notification:hover .shopping-cart{
+        .notification:hover .shopping-cart {
             display: block;
+            position: absolute;
+            top: 50px;
+            left: -100px;
         }
 
-        hr{
+        hr {
             margin-top: 3px;
         }
-        
+
+        #notific-num {
+            position: absolute;
+            top: -8px;
+            right: -20px;
+            padding: 5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            font-size: 1rem;
+        }
+
+        .mso-span{
+            font-size: 3rem;
+        }
     </style>
 </head>
 
 <body>
     <div class="notification">
         <p id="notific-num"></p>
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined mso-span">
             shopping_cart
         </span>
 
@@ -170,8 +190,8 @@
         fullPriceCon.appendChild(itemTotal);
         fullPriceCon.appendChild(fullPrice);
 
-
-
+        let notificNum = document.getElementById('notific-num');
+        notificNum.textContent = totalItem;
 
     </script>
 </body>
