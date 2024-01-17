@@ -36,6 +36,8 @@
             background-color: rgb(0, 136, 136);
             margin-bottom: 20px;
             border-radius: 10px;
+            transition: 0.2s ease-in-out;
+            
         }
 
         .highestRated{
@@ -51,6 +53,17 @@
             justify-content: space-between;
             padding: 10px 0px 10px 0px;
         }
+
+        .card:hover{
+            cursor: pointer;
+            background-color: rgb(0, 211, 211);
+        }
+
+        .highestRated:hover{
+            cursor: pointer;
+            background-color: rgb(255, 255, 255);
+        }
+
     </style>
 </head>
 
@@ -131,8 +144,7 @@
             title.textContent= movie.name;
             cardData.classList.add('card-data');
             pDate.textContent ='Date: ' + movie.releaseYear;
-            pRating.textContent ='Rating: ' +movie.rating;
-            pMainActor.classList.add('card-actor');
+            pRating.textContent ='Rating: ' +movie.rating+' IMDB';
             pMainActor.textContent ='Actors: '+ actors;
 
 
