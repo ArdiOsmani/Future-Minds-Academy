@@ -112,30 +112,30 @@
         });
 
         resetButton.addEventListener('click', () => {
-        if (paused) {
-            elapsedTime = 0;
-            lapNum = 0;
-            timeDisplay.textContent = '00:00,00';
-            let lapNumbersElements = lapContainer.querySelectorAll('.lapNumbers');
-            lapNumbersElements.forEach(element => element.remove());
-        } else {
-            lapNum++;
+            if (paused) {
+                elapsedTime = 0;
+                lapNum = 0;
+                timeDisplay.textContent = '00:00,00';
+                let lapNumbersElements = lapContainer.querySelectorAll('.lapNumbers');
+                lapNumbersElements.forEach(element => element.remove());
+            } else {
+                lapNum++;
 
-            let lapNumbers = document.createElement('div');
-            let pLapName = document.createElement('p');
-            let pTotal = document.createElement('p');
+                let lapNumbers = document.createElement('div');
+                let pLapName = document.createElement('p');
+                let pTotal = document.createElement('p');
 
-            pLapName.textContent = 'Lap ' + lapNum;
-            pTotal.textContent = formatTime(elapsedTime); // Show total time
+                pLapName.textContent = 'Lap ' + lapNum;
+                pTotal.textContent = formatTime(elapsedTime); // Show total time
 
-            lapNumbers.classList.add('lapNumbers');
+                lapNumbers.classList.add('lapNumbers');
 
-            lapContainer.appendChild(lapNumbers);
-            lapNumbers.appendChild(pLapName);
-            lapNumbers.appendChild(pTotal);
+                lapContainer.appendChild(lapNumbers);
+                lapNumbers.appendChild(pLapName);
+                lapNumbers.appendChild(pTotal);
 
-        }
-    });
+            }
+        });
 
         function updateTime() {
             const currentTime = Date.now();
@@ -153,11 +153,11 @@
         }
 
         function formatTime(time) {
-        const ms = pad(Math.floor((time % 1000) / 10));
-        const sec = pad(Math.floor((time / 1000) % 60));
-        const min = pad(Math.floor((time / (1000 * 60)) % 60));
-        return min + ':' + sec + ',' + ms;
-    }
+            const ms = pad(Math.floor((time % 1000) / 10));
+            const sec = pad(Math.floor((time / 1000) % 60));
+            const min = pad(Math.floor((time / (1000 * 60)) % 60));
+            return min + ':' + sec + ',' + ms;
+        }
     </script>
 </body>
 
