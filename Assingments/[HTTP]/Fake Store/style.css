@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+}
+
+.products-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.products{
+    width:min-content;
+    padding: 20px;
+    box-shadow: 0px 0px 20px gray;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+.products img{
+    width: 300px;
+    height: 300px;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.products-title{
+    margin-top: 10px;
+}
+
+.productData{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.products span{
+    color: orange;
+}
+
+.products p{
+    font-size: 1.2rem;
+}
