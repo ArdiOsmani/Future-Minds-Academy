@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ardi - Commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div id="products-container" class="products-container">
+
+        </div>
+    </main>
+    <script>
+        fetch("https://fakestoreapi.com/products")
+            .then(res => res.json())
+            .then(items => {
+
+                let productsContainer = document.getElementById('products-container');
+
+                items.forEach(item => {
+                    productsContainer.innerHTML += `
+                <div class="products">
+                    <img src="${item.image}" alt="${item.title}">
+                    <h3 class="products-title">${item.title}</h3>
+                    <div class="productData">
+                        <p><span>${ratingStars(item.rating.rate)}</span> of ${item.rating.count}</p>
+                        <h3>${item.price} €</h3>
+                    </div>
+                </div>`;
+                });
+            });
+
+
+        function ratingStars(rating) {
+            if (rating < 1) {
+                return '☆☆☆☆☆';
+            }
+            else if (rating < 1.5) {
+                return '★☆☆☆☆';
+            }
+            else if (rating < 2.5) {
+                return '★★☆☆☆';
+            }
+            else if (rating < 3.5) {
+                return '★★★☆☆';
+            }
+            else if (rating < 4.5) {
+                return '★★★★☆';
+            }
+            else if (rating < 5) {
+                return '★★★★★';
+            }
+            else {
+                return 'N/A';
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
