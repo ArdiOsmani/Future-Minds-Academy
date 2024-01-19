@@ -4,35 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <title>Ardi - Commerce</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <main>
-        <div id="products-container" class="products-container">
 
+    <header class="header">
+        <h3 id="">Ardi ECommerce</h3>
+        <div class="search-conainter">
+            <input id="search" class="search" placeholder="Search" type="text">
+            <span class="material-icons">search</span>
+        </div>
+        <span class="material-icons">shopping_cart</span>
+    </header>
+
+
+    <main>
+
+        <div id="products-container" class="products-container">
+        </div>
+
+        <div class="product-clicked" id="product-clicked">
+            <div class="productById">
+
+            </div>
         </div>
     </main>
+
+
+
     <script>
+
+        let productsArray = [];
+
         fetch("https://fakestoreapi.com/products")
             .then(res => res.json())
             .then(items => {
-
                 let productsContainer = document.getElementById('products-container');
 
                 items.forEach(item => {
+                    productsArray.push(item);
+
                     productsContainer.innerHTML += `
-                <div class="products">
+            <div class="products" id="${item.id}">
+                <div>
                     <img src="${item.image}" alt="${item.title}">
                     <h3 class="products-title">${item.title}</h3>
-                    <div class="productData">
-                        <p><span>${ratingStars(item.rating.rate)}</span> of ${item.rating.count}</p>
-                        <h3>${item.price} €</h3>
-                    </div>
-                </div>`;
+                </div>
+                <div class="productData">
+                    <p><span>${ratingStars(item.rating.rate)}</span> of ${item.rating.count}</p>
+                    <h3>Price: ${item.price} €</h3>
+                </div>
+            </div>`;
                 });
             });
+
+
+        document.addEventListener('click', (e) => {
+            var clickedElement = e.target;
+            var clickedId = clickedElement.closest('.products').id;
+
+            if (clickedId) {
+
+                var selectedItem = productsArray.find(item => item.id == clickedId);
+
+                if (selectedItem) {
+                    
+                }
+            }
+        });
 
 
         function ratingStars(rating) {
@@ -57,8 +99,10 @@
             else {
                 return 'N/A';
             }
-
         }
+
+
+
 
     </script>
 </body>
