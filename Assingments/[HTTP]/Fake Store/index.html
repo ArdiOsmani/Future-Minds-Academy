@@ -11,33 +11,36 @@
 
 <body>
 
-    <div class="right-side">
-        <header class="header">
-            <span class="material-icons icons" title="Menu">
-                menu
+
+    <header class="header">
+        <span class="material-icons icons" title="Menu">
+            menu
+        </span>
+        <div class="search-conainter">
+            <input id="search" class="search" placeholder="Search" type="text">
+            <span class="material-icons" title="Search">search</span>
+        </div>
+        <div class="notification" id="notification">
+            <p id="notific-num"></p>
+            <span id="shoppingCart" class="material-icons icons">
+                shopping_cart
             </span>
-            <div class="search-conainter">
-                <input id="search" class="search" placeholder="Search" type="text" title="Search">
-                <span class="material-icons">search</span>
+            <div class="shopping-cart" id="shopping-cart">
+                <h3>Cart</h3>
+                <hr>
             </div>
-            <div class="notification" id="notification">
-                <p id="notific-num"></p>
-                <span id="shoppingCart" class="material-icons icons">
-                    shopping_cart
-                </span>
-                <div class="shopping-cart" id="shopping-cart">
-                    <h3>Cart</h3>
-                    <hr>
-                </div>
-            </div>
-        </header>
+        </div>
+    </header>
 
 
-        <main id="main">
-            <div id="products-container" class="products-container">
-            </div>
-        </main>
-    </div>
+    <main id="main">
+        <div id="products-container" class="products-container">
+        </div>
+    </main>
+
+    <footer>
+        <h4>&copy; 2024 ECommerce Website. All rights reserved to Ardi Osmani!</h4>
+    </footer>
 
 
     <script>
@@ -58,7 +61,7 @@
                 productsArray = items;
 
                 renderProducts();
-            
+
             });
 
 
@@ -195,9 +198,9 @@
             let selectedItem = productsArray.find(item => item.id == itemId);
             let shoppingCart = document.getElementById('shopping-cart');
             let notificNum = document.getElementById('notific-num');
-            totalPrice=0;
-            totalItem=0;
-            
+            totalPrice = 0;
+            totalItem = 0;
+
             document.querySelectorAll('#shopping-item').forEach(e => e.remove());
             document.querySelectorAll('.finalPrice').forEach(e => e.remove());
 
@@ -207,10 +210,10 @@
 
             cartArray.push(selectedItem);
 
-            cartArray.forEach(item =>{
-                totalPrice+=item.price;
-                totalItem+=1;
-                shoppingCart.innerHTML +=`
+            cartArray.forEach(item => {
+                totalPrice += item.price;
+                totalItem += 1;
+                shoppingCart.innerHTML += `
                     <div id='shopping-item'>
                         <h4>${item.title}</h4>
                         <h4 class='price'>${item.price}$</h4>
@@ -219,7 +222,7 @@
                 `;
             })
 
-            shoppingCart.innerHTML +=`
+            shoppingCart.innerHTML += `
                 <div class="finalPrice">
                     <h4>Price: <span class="price">${totalPrice}$</span></h4>
                     <h4>Items X ${totalItem}</h4>
@@ -229,7 +232,7 @@
         }
 
 
-    
+
 
     </script>
 </body>
