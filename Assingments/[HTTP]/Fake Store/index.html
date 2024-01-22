@@ -11,71 +11,127 @@
 
 <body>
 
-    <header class="header">
-        <h3 id="">Ardi ECommerce</h3>
-        <div class="search-conainter">
-            <input id="search" class="search" placeholder="Search" type="text">
-            <span class="material-icons">search</span>
-        </div>
-        <span class="material-icons">shopping_cart</span>
-    </header>
-
-
-    <main>
-
-        <div id="products-container" class="products-container">
-        </div>
-
-        <div class="product-clicked" id="product-clicked">
-            <div class="productById">
-
+    <div class="right-side">
+        <header class="header">
+            <span class="material-icons icons" title="Menu">
+                menu
+            </span>
+            <div class="search-conainter">
+                <input id="search" class="search" placeholder="Search" type="text" title="Search">
+                <span class="material-icons">search</span>
             </div>
-        </div>
-    </main>
+            <div class="notification" id="notification">
+                <p id="notific-num"></p>
+                <span id="shoppingCart" class="material-icons icons">
+                    shopping_cart
+                </span>
+                <div class="shopping-cart" id="shopping-cart">
+                    <h3>Cart</h3>
+                    <hr>
+                </div>
+            </div>
+        </header>
 
+
+        <main id="main">
+            <div id="products-container" class="products-container">
+            </div>
+        </main>
+    </div>
 
 
     <script>
 
         let productsArray = [];
+        let cartArray = [];
+        let main = document.getElementById('main');
+        let productsContainer = document.getElementById('products-container');
+
+        let totalPrice = 0;
+        let totalItem = 0;
+        let shoppingCart = document.getElementById('shoppingCart');
 
         fetch("https://fakestoreapi.com/products")
             .then(res => res.json())
             .then(items => {
-                let productsContainer = document.getElementById('products-container');
 
-                items.forEach(item => {
-                    productsArray.push(item);
+                productsArray = items;
 
-                    productsContainer.innerHTML += `
-            <div class="products" id="${item.id}">
-                <div>
-                    <img src="${item.image}" alt="${item.title}">
-                    <h3 class="products-title">${item.title}</h3>
-                </div>
-                <div class="productData">
-                    <p><span>${ratingStars(item.rating.rate)}</span> of ${item.rating.count}</p>
-                    <h3>Price: ${item.price} €</h3>
-                </div>
-            </div>`;
-                });
+                renderProducts();
+            
             });
 
 
+        function renderProducts() {
+            productsArray.forEach(item => {
+
+                productsContainer.innerHTML += `
+            <div class="products" id="${item.id}" title="${item.category}">
+                <div>
+                    <img src="${item.image}" alt="${item.title}">
+                    <h4 class="products-title">${item.title}</h4>
+                </div>
+                <div class="productData">
+                    <p><span class="rating">${ratingStars(item.rating.rate)}</span> of ${item.rating.count}</p>
+                    <h4>Price: <span class="price">${item.price}€</span></h4>
+                </div>
+            </div>`;
+            });
+        }
+
+
         document.addEventListener('click', (e) => {
-            var clickedElement = e.target;
-            var clickedId = clickedElement.closest('.products').id;
+            let clickedElement = e.target;
+            if (clickedElement) {
+                let closestProductsElement = clickedElement.closest('.products');
+                let clickedId = closestProductsElement ? closestProductsElement.id : null;
 
-            if (clickedId) {
 
-                var selectedItem = productsArray.find(item => item.id == clickedId);
+                if (clickedId) {
 
-                if (selectedItem) {
-                    
+                    let selectedItem = productsArray.find(item => item.id == clickedId);
+
+                    if (selectedItem.id) {
+                        fetch(`https://fakestoreapi.com/products/${selectedItem.id}`)
+                            .then(res => res.json())
+                            .then(items => {
+                                main.innerHTML += `
+                                <div id="popUp" class="popUp">
+                                    <div class="popUp-title">
+                                        <h1>${items.title}</h1>
+                                        <span id="closePopUp" class="material-icons close" title="Close">close</span>
+                                        
+                                    </div>
+                                    <hr>
+                                    <div class="popUpContent">
+                                        <img src="${items.image}" alt="${items.title}"/>
+                                        <div class="popUpData">
+                                            <div>
+                                                <h3>Description:</h3>
+                                                <p>${items.description}</p>
+                                            </div>
+                                            <div class="popProductData">
+                                                <p class="popProductDataCategory">Category: ${upperCase(items.category)}</p>
+                                                <p>Rating: <span>${ratingStars(items.rating.rate)}</span> of ${items.rating.count}</p>
+                                            </div>
+                                            <div class="checkout">
+                                                <h3>Price: <span class="price">${items.price}€</span></h3>
+                                                <span id="sentToCart" onclick="sentToCart(${selectedItem.id});" class="material-icons sentToCart" title="Sent To Cart">shopping_cart_checkout</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="overlay" class="overlay"></div>
+                            `;
+                            });
+                    }
                 }
             }
         });
-
+        /*
+            return Stars for Rating
+            (Needs Number)
+        */
 
         function ratingStars(rating) {
             if (rating < 1) {
@@ -102,7 +158,78 @@
         }
 
 
+        /*
+            Close PopUp + Overlay
+        */
+        document.addEventListener('click', (e) => {
+            let clickedElement = e.target;
 
+            if (clickedElement.id === 'closePopUp' || clickedElement.closest('#closePopUp') || clickedElement.id === 'overlay') {
+                let popUp = document.getElementById('popUp');
+                let overlay = document.getElementById('overlay');
+                if (popUp) {
+                    popUp.remove();
+                    overlay.remove();
+                }
+            }
+        });
+
+
+        /*
+            Makes a string start with UpperCase
+            (Needs a string)
+            for Category strings
+        */
+
+        function upperCase(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        //=============================HeaderExperimental Part==========================
+
+        /*
+           Sends an item to the shopping cart list + add notification
+           (Needs a number ID)
+       */
+        function sentToCart(itemId) {
+            let selectedItem = productsArray.find(item => item.id == itemId);
+            let shoppingCart = document.getElementById('shopping-cart');
+            let notificNum = document.getElementById('notific-num');
+            totalPrice=0;
+            totalItem=0;
+            
+            document.querySelectorAll('#shopping-item').forEach(e => e.remove());
+            document.querySelectorAll('.finalPrice').forEach(e => e.remove());
+
+            notificNum.classList.remove('notific-num');
+            notificNum.classList.add('notific-num');
+
+
+            cartArray.push(selectedItem);
+
+            cartArray.forEach(item =>{
+                totalPrice+=item.price;
+                totalItem+=1;
+                shoppingCart.innerHTML +=`
+                    <div id='shopping-item'>
+                        <h4>${item.title}</h4>
+                        <h4 class='price'>${item.price}$</h4>
+                        <hr>    
+                    </div>
+                `;
+            })
+
+            shoppingCart.innerHTML +=`
+                <div class="finalPrice">
+                    <h4>Price: <span class="price">${totalPrice}$</span></h4>
+                    <h4>Items X ${totalItem}</h4>
+                    <span id="cartCheckOut" class="material-icons cartCheckOut" title="Go To Checkout">shopping_cart_checkout</span>
+                </div>
+            `;
+        }
+
+
+    
 
     </script>
 </body>
