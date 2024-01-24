@@ -34,19 +34,16 @@
             background-color: #45a049;
         }
 
-        .factsBox{
-            display: grid;
-            justify-content: center;
-            align-items: center;
-            grid-template-columns: 1fr 1fr 1fr;
-            width: 100%;
-            gap: 20px;
-        }
+        .factsBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;  /* Updated from 'start' to 'center' */
+    width: 100%;
+    gap: 20px;
+    margin:0 auto;  /* Added to center the container horizontally */
+}
 
         .fact {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
             width: 200px;
             background-color: white;
@@ -57,11 +54,10 @@
             transition: all 0.2s;
         }
 
-        .fact:hover{
-            scale: 1.1;
-            box-shadow: 0px 0px 10px green;
-
-        }
+        .fact:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px green;
+}
 
         .error {
             color: red;
@@ -77,10 +73,16 @@
 
     <div id="facts-container" class="facts-container">
         <div class="factsBox">
-                        <div class="fact"><p>${fact1}</p></div>
-                        <div class="fact"><p>${fact2}</p></div>
-                        <div class="fact"><p>${fact3}</p></div>
-                    </div>
+            <div class="fact">
+                <p>${fact1}</p>
+            </div>
+            <div class="fact">
+                <p>${fact2}</p>
+            </div>
+            <div class="fact">
+                <p>${fact3}</p>
+            </div>
+        </div>
     </div>
 
     <script>
