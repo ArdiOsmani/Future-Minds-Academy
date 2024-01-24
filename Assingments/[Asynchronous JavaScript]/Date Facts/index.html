@@ -6,66 +6,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Date Facts</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
+        * {
+            margin: 0;
         }
 
-        h1 {
-            color: #333;
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: rgb(221, 221, 221);
+            margin: 0px;
+            position: relative;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+
+        .name {
+            display: none;
+            font-size: 101px;
+            font-weight: lighter;
+            color: red;
+
+        }
+
+        .l1 {
+            font-size: 102px;
+            color: blue;
+            position: absolute;
+        }
+
+        .l2 {
+            font-size: 103px;
+            color: white;
+            position: absolute;
+        }
+
+        .typeData {
+            display: none;
+        }
+
+        .typeData p {
+            width: max-content;
         }
 
         input {
-            padding: 8px;
-            margin: 10px;
-        }
-
-        button {
-            padding: 10px;
-            background-color: #4CAF50;
+            font-family: monospace;
+            background-color: black;
+            border: 0;
+            outline: none;
             color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        #facts-container {
-            margin-top: 20px;
-        }
-
-        .fact {
-            margin-bottom: 10px;
-        }
-
-        .error {
-            display: none;
-            color: red;
-        }
-
-        .show{
-            display: block;
+            width: fit-content;
         }
     </style>
 </head>
 
 <body>
-    <h1>Date Facts</h1>
-    <label for="dob">Enter your Date of Birth:</label>
-    <input type="date" id="dob" required>
-    <button onclick="getBirthdayFacts()">Submit</button>
-
+    <p>Microsoft Windows [Version 10.0.19044.3086]<br>(c) Microsoft Corporation. All rights
+        reserved.<br><br>C:\Windows\system32> find_facts from user</p>
+    <p id="loading" class="loading">Loading...</p>
+    <h1 id="name" class="name l1">// Find Facts \\</h1>
+    <h1 id="name" class="name l2">// Find Facts \\</h1>
+    <h1 id="name" class="name">// Find Facts \\</h1>
+    <p>Type a date like example "01/05"</p>
+    <div id="typeData" class="typeData">
+        <p>so "day/month" in here =====>>></p>
+        <input type="date" id="inputField" required>
+    </div>
     <div id="facts-container">
-        <p id="error" class="error">PLEASE TYPE A VALID DATE OF BIRTH!!!</p>
     </div>
 
     <script>
+        let loading = document.getElementById('loading');
+        let typeData = document.getElementById('typeData');
+        let name = document.querySelectorAll('.name');
+        let factsContainer = document.getElementById('facts-container');
+        let dotsCount = 0;
+
+        setInterval(() => {
+            dotsCount = (dotsCount + 1) % 4;
+            let dotsString = '.'.repeat(dotsCount);
+            loading.textContent = `Loading${dotsString}`;
+        }, 300);
+
+        setInterval(() => {
+            loading.remove();
+            name.forEach(element => {
+                element.style.display = 'block';
+            });
+            typeData.style.display = 'flex'
+        }, 1000);
+
         async function getApi(day, month) {
-            const url = `https://numbersapi.p.rapidapi.com/${month}/${day}/date?fragment=true&json=true`;
-            const options = {
+            let url = `https://numbersapi.p.rapidapi.com/${month}/${day}/date?fragment=true&json=true`;
+            let options = {
                 method: 'GET',
                 headers: {
                     'X-RapidAPI-Key': 'aa6c822d06mshba6fa3a1a045633p1f70c4jsnede1b8640ba3',
@@ -74,30 +108,18 @@
             };
 
             try {
-                const response = await fetch(url, options);
-                const result = await response.json();
+                let response = await fetch(url, options);
+                let result = await response.json();
                 return result.text;
             } catch (error) {
                 alert(error);
             }
         }
 
-        async function getBirthdayFacts() {
-            const dobInput = document.getElementById('dob');
-            const dob = new Date(dobInput.value);
-            const factsContainer = document.getElementById('facts-container');
-
-            if (isNaN(dob.getTime())) {
-                let error = document.getElementById('error');
-                error.classList.add('show');
-                return;
-            }
-
-            const day = dob.getDate();
-            const month = dob.getMonth() + 1;
+        async function getBirthdayFacts(day,month) {
 
             try {
-                const [fact1, fact2, fact3] = await Promise.all([
+                let [fact1, fact2, fact3] = await Promise.all([
                     getApi(day, month),
                     getApi(day, month),
                     getApi(day, month)
@@ -112,6 +134,16 @@
                 alert(error);
             }
         }
+
+        inputField.addEventListener('keyup', function (event) {
+            if (event.key === 'Enter') {
+                userInput = inputField.value;
+
+                let day = userInput.substring(0,2);
+                let month = userInput.substring(3,6);
+                getBirthdayFacts(day,month);
+            }
+        });
     </script>
 </body>
 
