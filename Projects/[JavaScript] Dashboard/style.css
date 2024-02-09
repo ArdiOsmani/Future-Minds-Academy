@@ -20,6 +20,10 @@
     
 }
 
+.active{
+    background-color: var(--active-color);
+}
+
 *,
 *::after,
 *::before{
