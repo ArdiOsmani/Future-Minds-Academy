@@ -15,6 +15,14 @@ export function initializeSidebar() {
     let maps = document.getElementById('maps');
     let components = document.getElementById('components');
 
+    let userSlider = document.querySelectorAll('.slider-container');
+
+    userSlider.forEach(item =>{
+        let slider = item.parentElement.querySelector('.user-slider');
+
+        
+    })
+
     user.addEventListener('click', () => {
         let userSlider = document.getElementById('user-slider');
 
