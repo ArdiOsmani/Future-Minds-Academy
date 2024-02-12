@@ -833,30 +833,30 @@ footer{
 }
 
 .color-settings .color-green{
-    width: 10px;
-    padding: 10px;
+    width: 20px;
+    height: 20px;
     border-radius: 200px;
     background-color: rgb(0, 255, 0);
 }
 
 
-.color-settings .color-green{
-    width: 10px;
-    padding: 10px;
+.color-settings .color-purple{
+    width: 20px;
+    height: 20px;
     border-radius: 200px;
     background-color: purple;
 }
 
 
-.color-settings .color-green{
-    width: 10px;
-    padding: 10px;
+.color-settings .color-blue{
+    width: 20px;
+    height: 20px;
     border-radius: 200px;
     background-color: lightskyblue;
 }
 
 
-.color-settings .color-green{
+.color-settings .color-orange{
     width: 10px;
     padding: 10px;
     border-radius: 200px;
@@ -868,7 +868,7 @@ footer{
     width: 10px;
     padding: 10px;
     border-radius: 200px;
-    background-color: rgb(190, 190, 190);
+    background-color: rgb(214, 214, 214);
 }
 
 
@@ -877,6 +877,10 @@ footer{
     padding: 10px;
     border-radius: 200px;
     background-color: black;
+}
+
+.with-border{
+    border: 2px solid black;
 }
 
 
