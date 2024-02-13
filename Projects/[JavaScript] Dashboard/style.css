@@ -883,6 +883,17 @@ footer{
     border: 2px solid black;
 }
 
+.sidebar-img-settings{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+}
+
+.sidebar-img-settings img{
+    width: 100%;
+}
+
 
 /*=============Tablet Display=========*/
 
