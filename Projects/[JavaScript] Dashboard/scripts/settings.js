@@ -36,4 +36,20 @@ export function settings() {
         setOrange.classList.add('with-border');
         document.documentElement.style.setProperty('--active-color', 'orangered');
     })
+
+    let img1 = document.getElementById('img-1');
+    let img2 = document.getElementById('img-2');
+
+    img1.addEventListener('click', ()=>{
+        img1.classList.add('with-border');
+        img2.classList.remove('with-border');
+        document.documentElement.style.setProperty('--leftmenu-background-image', 'url(images/sidebar-1.jpg)');
+    })
+
+    img2.addEventListener('click', ()=>{
+        img2.classList.add('with-border');
+        img1.classList.remove('with-border');
+        document.documentElement.style.setProperty('--leftmenu-background-image', 'url(images/sidebar-2.jpg)');
+    })
+
 }
