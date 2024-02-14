@@ -4,6 +4,7 @@
 
     /*==========Left Side Menu==========*/
     --leftmenu-background-image:url(images/sidebar-1.jpg);
+    --leftmenu-background-color:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8));
     --leftmenu-word-color:white;
     --leftmenu-img-size-user:35px;
     --leftmenu-paragraph-size:0.9rem;
@@ -21,6 +22,7 @@
 }
 
 .active{
+    border-radius: 3px;
     background-color: var(--active-color);
 }
 
@@ -61,7 +63,7 @@ ul{
 .aside-menu{
     overflow-y: auto;
     overflow-x: hidden;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)) ,var(--leftmenu-background-image);
+    background-image: var(--leftmenu-background-color) ,var(--leftmenu-background-image);
     background-position: center;
     background-size:cover;
     display: flex;
@@ -80,9 +82,10 @@ ul{
 }
 
 .user{
+    padding: 5px 10px;
     display: flex;
     align-items: center;
-    margin: 15px 5px;
+    margin: 10px 5px;
 }
 
 .user img{
@@ -857,30 +860,30 @@ footer{
 
 
 .color-settings .color-orange{
-    width: 10px;
-    padding: 10px;
+    width: 20px;
+    height: 20px;
     border-radius: 200px;
     background-color: orangered;
 }
 
 
 .sidebar-color-settings .color-white{
-    width: 10px;
-    padding: 10px;
+    width: 20px;
+    height: 20px;
     border-radius: 200px;
     background-color: rgb(214, 214, 214);
 }
 
 
 .sidebar-color-settings .color-black{
-    width: 10px;
-    padding: 10px;
+    width: 20px;
+    height: 20px;
     border-radius: 200px;
     background-color: black;
 }
 
 .with-border{
-    border: 2px solid black;
+    border: 2px solid rgb(0, 68, 255);
 }
 
 .sidebar-img-settings{
