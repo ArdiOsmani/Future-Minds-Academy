@@ -67,4 +67,10 @@ export function settings() {
         document.documentElement.style.setProperty('--leftmenu-background-color', 'linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8))')
     });
 
+    let settings = document.getElementById('settings');
+    let settingBox = document.getElementById('setting-box');
+
+    settings.addEventListener('click', ()=>{
+        settingBox.classList.toggle('remove');
+    })
 }
