@@ -52,4 +52,19 @@ export function settings() {
         document.documentElement.style.setProperty('--leftmenu-background-image', 'url(images/sidebar-2.jpg)');
     })
 
+    let whiteSide = document.getElementById('white-side');
+    let blackSide = document.getElementById('black-side');
+
+    whiteSide.addEventListener('click',()=>{
+        whiteSide.classList.add('with-border');
+        blackSide.classList.remove('with-border');
+        document.documentElement.style.setProperty('--leftmenu-background-color', 'linear-gradient(rgba(189, 189, 189, 0.8),rgba(199, 199, 199, 0.8))')
+    });
+
+    blackSide.addEventListener('click',()=>{
+        blackSide.classList.add('with-border');
+        whiteSide.classList.remove('with-border');
+        document.documentElement.style.setProperty('--leftmenu-background-color', 'linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8))')
+    });
+
 }
