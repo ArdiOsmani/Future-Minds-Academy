@@ -86,6 +86,7 @@ ul{
     display: flex;
     align-items: center;
     margin: 10px 5px;
+    width: 14rem;
 }
 
 .user img{
@@ -94,10 +95,10 @@ ul{
 }
 
 .user .data{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 12rem;
 }
 
 .user .data span{
@@ -802,6 +803,7 @@ footer{
 
 .setting-container{
     position: fixed;
+    z-index: 999;
     top: 100px;
     right: 15px;
     background-color: rgba(211, 211, 211, 0.8);
@@ -817,7 +819,6 @@ footer{
     background-color: white;
     padding: 10px;
     border-radius: 8px;
-    z-index: 999;
     display: flex;
     flex-direction: column;
     align-items: center;
