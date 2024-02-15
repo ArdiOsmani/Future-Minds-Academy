@@ -1,70 +1,61 @@
 export function settings() {
 
+    function setActiveColor(color) {
+        document.documentElement.style.setProperty('--active-color', color);
+        localStorage.setItem('activeColor', color);
+    }
+
+    function setLeftMenuBackgroundImage(imageUrl) {
+        document.documentElement.style.setProperty('--leftmenu-background-image', imageUrl);
+        localStorage.setItem('leftMenuBackgroundImage', imageUrl);
+    }
+
+    function setLeftMenuBackgroundColor(color) {
+        document.documentElement.style.setProperty('--leftmenu-background-color', color);
+        localStorage.setItem('leftMenuBackgroundColor', color);
+    }
+
     let setGreen = document.getElementById('set-green');
     let setPurple = document.getElementById('set-purple');
     let setBlue = document.getElementById('set-blue');
     let setOrange = document.getElementById('set-orange');
 
     setGreen.addEventListener('click', ()=>{
-        setGreen.classList.add('with-border');
-        setPurple.classList.remove('with-border');
-        setBlue.classList.remove('with-border');
-        setOrange.classList.remove('with-border');
-        document.documentElement.style.setProperty('--active-color', 'green');
+        setActiveColor('green');
     })
 
     setPurple.addEventListener('click', ()=>{
-        setGreen.classList.remove('with-border');
-        setPurple.classList.add('with-border');
-        setBlue.classList.remove('with-border');
-        setOrange.classList.remove('with-border');
-        document.documentElement.style.setProperty('--active-color', 'purple');
+        setActiveColor('purple');
     })
 
     setBlue.addEventListener('click', ()=>{
-        setGreen.classList.remove('with-border');
-        setPurple.classList.remove('with-border');
-        setBlue.classList.add('with-border');
-        setOrange.classList.remove('with-border');
-        document.documentElement.style.setProperty('--active-color', 'lightblue');
+        setActiveColor('lightblue');
     })
 
     setOrange.addEventListener('click', ()=>{
-        setGreen.classList.remove('with-border');
-        setPurple.classList.remove('with-border');
-        setBlue.classList.remove('with-border');
-        setOrange.classList.add('with-border');
-        document.documentElement.style.setProperty('--active-color', 'orangered');
+        setActiveColor('orangered');
     })
 
     let img1 = document.getElementById('img-1');
     let img2 = document.getElementById('img-2');
 
     img1.addEventListener('click', ()=>{
-        img1.classList.add('with-border');
-        img2.classList.remove('with-border');
-        document.documentElement.style.setProperty('--leftmenu-background-image', 'url(images/sidebar-1.jpg)');
+        setLeftMenuBackgroundImage('url(images/sidebar-1.jpg)');
     })
 
     img2.addEventListener('click', ()=>{
-        img2.classList.add('with-border');
-        img1.classList.remove('with-border');
-        document.documentElement.style.setProperty('--leftmenu-background-image', 'url(images/sidebar-2.jpg)');
+        setLeftMenuBackgroundImage('url(images/sidebar-2.jpg)');
     })
 
     let whiteSide = document.getElementById('white-side');
     let blackSide = document.getElementById('black-side');
 
     whiteSide.addEventListener('click',()=>{
-        whiteSide.classList.add('with-border');
-        blackSide.classList.remove('with-border');
-        document.documentElement.style.setProperty('--leftmenu-background-color', 'linear-gradient(rgba(189, 189, 189, 0.8),rgba(199, 199, 199, 0.8))')
+        setLeftMenuBackgroundColor('linear-gradient(rgba(189, 189, 189, 0.8),rgba(199, 199, 199, 0.8))');
     });
 
     blackSide.addEventListener('click',()=>{
-        blackSide.classList.add('with-border');
-        whiteSide.classList.remove('with-border');
-        document.documentElement.style.setProperty('--leftmenu-background-color', 'linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8))')
+        setLeftMenuBackgroundColor('linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8))');
     });
 
     let settings = document.getElementById('settings');
@@ -72,5 +63,16 @@ export function settings() {
 
     settings.addEventListener('click', ()=>{
         settingBox.classList.toggle('remove');
-    })
+    });
+
+    window.addEventListener('load', () => {
+        const activeColor = localStorage.getItem('activeColor');
+        if (activeColor) setActiveColor(activeColor);
+
+        const leftMenuBackgroundImage = localStorage.getItem('leftMenuBackgroundImage');
+        if (leftMenuBackgroundImage) setLeftMenuBackgroundImage(leftMenuBackgroundImage);
+
+        const leftMenuBackgroundColor = localStorage.getItem('leftMenuBackgroundColor');
+        if (leftMenuBackgroundColor) setLeftMenuBackgroundColor(leftMenuBackgroundColor);
+    });
 }
