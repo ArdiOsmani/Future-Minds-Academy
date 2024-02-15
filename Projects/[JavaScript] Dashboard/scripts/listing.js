@@ -63,14 +63,14 @@ export function list() {
                     <span class="material-icons red-span delete-btn" title="Delete">close</span>
                 </div>
             </div>
-            <p class="manage-list-item-title" contenteditable="true">${item.name}</p>
-            <p class="manage-list-item-paragraph" contenteditable="true">${item.description}</p>
+            <p class="manage-list-item-title" contenteditable="false">${item.name}</p>
+            <p class="manage-list-item-paragraph" contenteditable="false">${item.description}</p>
             <hr>
             <div class="manage-list-item-bottom">
-                <p class="manage-list-item-price" contenteditable="true">${item.currency}${item.price}/night</p>
+                <p class="manage-list-item-price" contenteditable="false">${item.currency}${item.price}/night</p>
                 <div class="manage-list-item-bottom-right">
                     <span class="material-icons gray-span" title="Delete">location_on</span>
-                    <p class="manage-list-item-location" contenteditable="true">${item.location.city}, ${item.location.country}</p>
+                    <p class="manage-list-item-location" contenteditable="false">${item.location.city}, ${item.location.country}</p>
                 </div>
             </div>
         `;
