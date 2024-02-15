@@ -1,5 +1,4 @@
 export function initializeSidebar() {
-    console.log('hello');
     let closeElements = document.querySelectorAll('[id="data"]');
     let closeSldier = document.querySelectorAll('[class="user-slider"]');
     let icon = document.querySelectorAll('[id="icon"]');
@@ -81,8 +80,19 @@ export function initializeSidebar() {
         userSlider.classList.toggle('remove');
     });
 
-    document.getElementById('close-menu').addEventListener('click', () => {
+    let closeMenu = document.getElementById('close-menu');
+
+    let closeMenuSpan =document.getElementById('close-menu-span');
+
+    closeMenu.addEventListener('click', () => {
         menu = !menu;
+
+        if(closeMenuSpan.textContent == 'more_vert'){
+            closeMenuSpan.textContent = 'menu';
+        }
+        else{
+            closeMenuSpan.textContent = 'more_vert';
+        }
 
         closeElements.forEach(element => {
             element.classList.toggle('remove');
