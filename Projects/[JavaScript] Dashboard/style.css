@@ -698,15 +698,15 @@ td{
 }
 
 .gray-span{
-    color: grey;
+    color: grey !important;
 }
 
 .green-span{
-    color: green;
+    color: green !important;
 }
 
 .red-span{
-    color: red;
+    color: red !important;
 }
 
 .manage-list-item-title{

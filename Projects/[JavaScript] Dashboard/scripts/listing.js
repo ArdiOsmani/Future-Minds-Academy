@@ -81,17 +81,23 @@ export function list() {
         editBtn.addEventListener('click', () => {
 
             if(editBtn.textContent == 'save'){
+
                 editBtn.textContent = 'done';
+                editBtn.classList.add='red-span';
+
             }
             else{
+
                 editBtn.textContent = 'save';
+                editBtn.classList.add='green-span';
+                
             }
 
-            listItem.querySelectorAll('[contenteditable="true"]').forEach(element => {
+            listItem.querySelectorAll('[contenteditable="false"]').forEach(element => {
                 element.contentEditable = true;
             });
             
-            listItem.querySelectorAll('[contenteditable="true"]').forEach(element => {
+            listItem.querySelectorAll('[contenteditable="false"]').forEach(element => {
                 element.addEventListener('blur', () => {
                     if(element.classList.contains('manage-list-item-title')) {
                         item.name = element.innerText;
