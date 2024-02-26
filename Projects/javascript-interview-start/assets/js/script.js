@@ -60,7 +60,25 @@ function revealMovie(index, i) {
 function changeMovieInterval(){
 
 
-    allMovies[movieGernes.value].movies.forEach(movie=>{
+    for (let i = 0; i < allMovies[movieGernes.value].movies.length; i++) {
+        let movie = allMovies[movieGernes.value].movies[i];
+    
+        setTimeout(() => {
+            movieDetailsPage.innerHTML = `
+                <h1>${movie.title} (2023)</h1>
+                <h4>Date: ${movie.date} | Length: ${movie.length}min</h4>
+                <div class="container">
+                    ${movie.trailer}
+                </div>
+    
+                <h4>Gerard Butler, Mike Colter, Tony Goldwyn, Yoson An</h4>
+                <p>${movie.desc}</p>
+            `;
+        }, 1000);
+    }
+
+
+  /*  allMovies[movieGernes.value].movies.forEach(movie=>{
         setTimeout(()=>{
             movieDetailsPage.innerHTML = `
             <h1>${movie.title} (2023)</h1>
@@ -76,6 +94,7 @@ function changeMovieInterval(){
         }, 500)
         console.log('hello');
     })  
+    */
 }
 
 
