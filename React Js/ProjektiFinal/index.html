@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fma-general.css">
+    <link rel="stylesheet" href="fma-responsive.css">
+    <link rel="stylesheet" href="App.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="App">
+        <header class="App-header wrapper-lg">
+          <h1 class='row just-center'>To-Do List</h1>
+          <div class='row just-between gap-2 row-tablet'>
+            <form class='row-direction gap-2 col-1 background-container smallScreen'>
+                <h2>Create Task</h2>
+                <input 
+                  type="text" 
+                  value="" 
+                  placeholder="Add a new task" 
+                />
+                <input 
+                  type="date" 
+                  value="" 
+                />
+                <input 
+                  type="time" 
+                  value="" 
+                />
+          
+                <div class='row just-between align-center'>
+                
+                <label class='row align-center'>
+                  Important
+                  <input 
+                    type="checkbox" 
+                  />
+                </label>
+                <input 
+                  type="color" 
+                  value="#000000" 
+                />
+                </div>
+                <button type="submit">Add</button>
+              </form>
+
+            <div class='col-2 row-direction align-center gap-2 background-container list-height'>
+      <div class='row just-between wrapper-full'>
+        <button class='col-1' type="submit">All</button>
+        <button class='col-1' type="submit">Yesterday</button>
+        <button class='col-1' type="submit">Today</button>
+        <button class='col-1' type="submit">Tomorrow</button>
+      </div>
+      <hr/>
+      <ul class='col-4'>
+        <li style={{ textDecoration: 'none', color: '#000000' }}>
+          <div>
+            Task example - 2024-06-27 14:30
+            <button>
+              <i class="fa fa-check"></i>
+            </button>
+            <button>
+              <i class="fa fa-edit"></i>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+          </div>
+        </header>
+      </div>
+</body>
+</html>
