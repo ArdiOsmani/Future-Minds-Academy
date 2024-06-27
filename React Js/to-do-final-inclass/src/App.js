@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ToDoForm from './components/ToDoForm';
 import ToDoList from './components/ToDoList';
 import './App.css';
+import './assets/css/fma-general.css';
+import './assets/css/fma-responsive.css';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -63,10 +65,12 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>To-Do List</h1>
-        <ToDoForm addTask={addTask} />
-        <ToDoList tasks={filteredTasks.length ? filteredTasks : tasks} toggleCompleted={toggleCompleted} updateTask={updateTask} filterTasks={filterTasks} />
+      <header className="App-header wrapper-lg">
+        <h1 className='row just-center'>To-Do List</h1>
+        <div className='row just-between gap-2 row-tablet'>
+          <ToDoForm addTask={addTask} />
+          <ToDoList tasks={filteredTasks.length ? filteredTasks : tasks} toggleCompleted={toggleCompleted} updateTask={updateTask} filterTasks={filterTasks} />
+        </div>
       </header>
     </div>
   );

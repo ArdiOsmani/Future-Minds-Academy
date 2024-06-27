@@ -20,7 +20,8 @@ const ToDoForm = ({ addTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='row-direction gap-2 col-1 background-container smallScreen' onSubmit={handleSubmit}>
+      <h2>Create Task</h2>
       <input 
         type="text" 
         value={task} 
@@ -37,7 +38,11 @@ const ToDoForm = ({ addTask }) => {
         value={time} 
         onChange={(e) => setTime(e.target.value)} 
       />
-      <label>
+
+      <div className='row just-between align-center'>
+
+      
+      <label className='row align-center'>
         Important
         <input 
           type="checkbox" 
@@ -50,6 +55,7 @@ const ToDoForm = ({ addTask }) => {
         value={color} 
         onChange={(e) => setColor(e.target.value)} 
       />
+      </div>
       <button type="submit">Add</button>
     </form>
   );

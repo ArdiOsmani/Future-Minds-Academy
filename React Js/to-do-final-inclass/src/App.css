@@ -1,6 +1,6 @@
-.App {
-  text-align: center;
-  margin-top: 50px;
+.App{
+  background-color: rgb(255, 246, 234);
+  height: 100vh;
 }
 
 input[type="text"],
@@ -41,4 +41,35 @@ button {
 
 div button {
   margin: 5px;
+}
+
+hr{
+  width: 100%;
+}
+
+.background-container{
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.list-height{
+  min-height: 300px;
+}
+
+.smallScreen{
+  height: fit-content;
+}
+
+h1{
+  font-size: 40px;
+  padding: 20px;
+}
+
+h2{
+  font-size: 32px;
+  padding: 5px 0px;
 }

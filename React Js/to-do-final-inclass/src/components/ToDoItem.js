@@ -49,14 +49,19 @@ const ToDoItem = ({ task, index, toggleCompleted, updateTask }) => {
               onChange={(e) => setEditedIsImportant(e.target.checked)} 
             />
           </label>
+
           <input 
             type="color" 
             value={editedColor} 
             onChange={(e) => setEditedColor(e.target.value)} 
           />
-          <button onClick={handleSave}>Save</button>
-          <button onClick={() => setIsEditing(false)}>Cancel</button>
-        </div>
+
+            <div className='row gap-1'>
+              <button className='col-1' type="submit" onClick={handleSave}>Save</button>
+              <button className='col-1' type="submit" onClick={() => setIsEditing(false)}>Cancel</button>
+            </div>
+          </div>
+
       ) : (
         <div>
           {task.task} - {task.date} {task.time}
