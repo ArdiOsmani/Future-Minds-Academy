@@ -1,9 +1,10 @@
+import React, { useState, useEffect } from 'react';
+import ToDoForm from './components/ToDoForm';
+import ToDoList from './components/ToDoList';
+import './App.css';
 import './assets/css/fma-general.css';
 import './assets/css/fma-responsive.css';
 import './assets/css/style.css';
-import ToDoForm from './components/ToDoForm';
-import ToDoList from './components/ToDoList';
-import { useState, useEffect } from 'react';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -26,15 +27,20 @@ function App() {
 
   const toggleCompleted = (index) => {
     const newTasks = tasks.map((task, i) => 
-      i === index ? { ...task, isCompleted: !task.isCompleted } : task
+      i === index? {...task, isCompleted:!task.isCompleted } : task
     );
     setTasks(newTasks);
   };
 
   const updateTask = (index, updatedTask) => {
     const newTasks = tasks.map((task, i) => 
-      i === index ? updatedTask : task
+      i === index? updatedTask : task
     );
+    setTasks(newTasks);
+  };
+
+  const deleteTask = (index) => {
+    const newTasks = tasks.filter((_, i) => i!== index);
     setTasks(newTasks);
   };
 
@@ -65,14 +71,12 @@ function App() {
 
   return (
     <div className="container-fluid just-center">
-  <div className="form-container m-2 p-2">
-    <h1>My TODO's</h1>
-    
-    <ToDoForm addTask={addTask}/>
-
-    <ToDoList/>
-  </div>
-</div>
+      <div className="form-container m-2 p-2">
+        <h1>My TODO's</h1>
+        <ToDoForm addTask={addTask} />
+        <ToDoList tasks={filteredTasks.length? filteredTasks : tasks} toggleCompleted={toggleCompleted} updateTask={updateTask} deleteTask={deleteTask} filterTasks={filterTasks} />
+      </div>
+    </div>
   );
 }
 
