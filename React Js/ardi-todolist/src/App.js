@@ -73,8 +73,8 @@ function App() {
     <div className="container-fluid just-center">
       <div className="form-container m-2 p-2">
         <h1>My TODO's</h1>
-        <ToDoForm addTask={addTask} />
-        <ToDoList tasks={filteredTasks.length? filteredTasks : tasks} toggleCompleted={toggleCompleted} updateTask={updateTask} deleteTask={deleteTask} filterTasks={filterTasks} />
+        <ToDoForm addTask={addTask} filterTasks={filterTasks}/>
+        <ToDoList tasks={filteredTasks.length? filteredTasks : tasks} toggleCompleted={toggleCompleted} updateTask={updateTask} deleteTask={deleteTask} />
       </div>
     </div>
   );

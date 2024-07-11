@@ -1,7 +1,7 @@
 
 import ToDoItem from "./ToDoItem";
 
-const ToDoList=({tasks, toggleCompleted, updateTask, filterTasks})=>{
+const ToDoList=({tasks, toggleCompleted, updateTask})=>{
     return(
     <ul id="task-list" className="row-direction task-list ">
       {tasks.map((task, index) => (

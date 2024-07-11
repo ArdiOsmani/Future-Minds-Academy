@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function ToDoForm({ addTask }) {
+export default function ToDoForm({ addTask, filterTasks }) {
   const [task, setTask] = useState('');
   const [datetime, setDatetime] = useState('');
   const [important, setImportant] = useState(false);
@@ -74,16 +74,16 @@ export default function ToDoForm({ addTask }) {
         ADD NEW TASK
       </button>
       <div className="button-group">
-        <button type="button" className="btn btn-primary-outline btn-all">
+        <button type="button" className="btn btn-primary-outline btn-all" onClick={() => filterTasks('all')}>
           All
         </button>
-        <button type="button" className="btn btn-primary-outline btn-all">
+        <button type="button" className="btn btn-primary-outline btn-all" onClick={() => filterTasks('today')}>
           Today
         </button>
-        <button type="button" className="btn btn-primary-outline btn-all">
+        <button type="button" className="btn btn-primary-outline btn-all" onClick={() => filterTasks('tomorrow')}>
           Tomorrow
         </button>
-        <button type="button" className="btn btn-primary-outline btn-all">
+        <button type="button" className="btn btn-primary-outline btn-all" onClick={() => filterTasks('yesterday')}>
           Yesterday
         </button>
       </div>
