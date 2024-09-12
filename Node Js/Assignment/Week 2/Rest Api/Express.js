@@ -18,21 +18,23 @@ app.post('/products', (req,res)=>{
     res.json({name:"Product 4", price:21.99})
 })
 
-app.get("/products/1", (req,res)=>{
+app.get("/products/:id", (req,res)=>{
+    let productId = parseInt(req.params.id)-1;
     res.status(201);
-    res.json(products[1])
+    console.log(productId);
+    res.json(products[productId])
 })
 
 
-app.put("/products/", (req, res)=>{
+app.put("/products/:id", (req, res)=>{
     res.status(201);
-    res.json({message:"Product has been updated!"})
+    res.json({message:`Product with id ${req.params.id} been updated!`})
 })
 
 
-app.delete("/products/", (req, res)=>{
+app.delete("/products/:id", (req, res)=>{
     res.status(201);
-    res.json({message:"Product has been deleted!"})
+    res.json({message:`Product with id ${req.params.id} has been deleted!`})
 })
 
 
