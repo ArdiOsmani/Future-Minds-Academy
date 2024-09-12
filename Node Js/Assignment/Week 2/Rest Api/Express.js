@@ -22,7 +22,7 @@ app.get("/products/:id", (req,res)=>{
     let productId = parseInt(req.params.id)-1;
     res.status(201);
     console.log(productId);
-    res.json(products[productId])
+    res.json(products[productId]);
 })
 
 
