@@ -15,7 +15,6 @@ app.get('/products',(req,res)=>{
 
 app.get('/products/:id', (req, res) => {
   const product = products.find(p => p.id === parseInt(req.params.id));
-  if (!product) return res.status(404).send('Product not found');
   res.json(product);
 });
 
@@ -32,7 +31,6 @@ app.post('/products', (req, res) => {
 
 app.put('/products/:id', (req, res) => {
   const product = products.find(p => p.id === parseInt(req.params.id));
-  if (!product) return res.status(404).send('Product not found');
 
   const { name, price } = req.body;
   if (name) product.name = name;
@@ -43,7 +41,6 @@ app.put('/products/:id', (req, res) => {
 
 app.delete('/products/:id', (req, res) => {
   const productIndex = products.findIndex(p => p.id === parseInt(req.params.id));
-  if (productIndex === -1) return res.status(404).send('Product not found');
 
   products.splice(productIndex, 1);
   res.status(204).send(); 
