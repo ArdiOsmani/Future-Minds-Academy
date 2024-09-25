@@ -66,6 +66,29 @@ app.delete('/books/:id', (req, res) => {
 });
 
 
+app.get('/books/topten', (req, res) => {
+    const query = 'SELECT * FROM books ORDER BY rating DESC LIMIT 10';
+    database.query(query, (err, results) => {
+        if (err) {
+            return res.status(500).json({message: "Error top 10 books"})
+        }
+        res.json(results);
+    });
+});
+
+
+
+app.get('/books/genre', (req, res) => {
+    const query = 'SELECT * FROM books ORDER BY genre ASC';
+    database.query(query, (err, results) => {
+        if (err) {
+            return res.status(500).json({message: "Error genre"})
+        }
+        res.json(results);
+    });
+});
+
+
 app.listen(5050, ()=>{
     console.log('Server is running on port 5050');
 })
