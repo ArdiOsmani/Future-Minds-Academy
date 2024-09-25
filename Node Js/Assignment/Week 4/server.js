@@ -27,7 +27,7 @@ app.post('/books', (req, res) => {
         if (err) {
             return res.status(500).json({message: "Error adding books"})
         }
-        res.send('Book added successfully.');
+        res.send('Book added!');
     });
 });
 
@@ -50,7 +50,7 @@ app.put('/books/:id', (req, res) => {
             return res.status(500).json({message: "Error updating books"})
         }
 
-        res.send('Book updated successfully.');
+        res.send('Book updated!');
     });
 });
 
@@ -61,7 +61,7 @@ app.delete('/books/:id', (req, res) => {
         if (err) {
             return res.status(500).json({message: "Error delete books"})
         }
-        res.send('Book deleted successfully.');
+        res.send('Book deleted!');
     });
 });
 
