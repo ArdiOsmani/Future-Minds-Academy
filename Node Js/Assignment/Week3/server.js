@@ -1,23 +1,25 @@
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
+const http = require("http");
+const fs = require("fs");
+const path = require("path");
 
 const server = http.createServer((req, res) => {
-    if (req.url === '/teksti.txt') {
-        const filePath = path.join(__dirname, 'teksti.txt');
-        res.writeHead(200, {
-            'Content-Type': 'text/plain',
-            'Content-Disposition': 'attachment; filename="teksti.txt"'
-        });
-        const StreamTeksti = fs.createReadStream(filePath);
-        StreamTeksti.pipe(res);
-    } else {
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('404 Not Found');
-    }
+  const filePath = path.join(__dirname, "teksti.txt");
+
+  if (req.url === "/teksti.txt") {
+    res.writeHead(200, {
+      "Content-Type": "application/octet-stream",
+      "Content-Disposition": "attachment; filename=teksti.txt",
+    });
+
+    const fileStream = fs.createReadStream(filePath);
+
+    fileStream.pipe(res);
+  } else {
+    res.write("Go to /teksti.txt");
+    res.end();
+  }
 });
 
-const PORT = 8080;
-server.listen(PORT, () => {
-    console.log(`Serveri po dëgjon në http://localhost:${PORT}`);
+server.listen(8080, ()=>{
+    console.log("http://localhost:8080/");
 });
