@@ -7,8 +7,8 @@ const BASE_PATH = path.join(__dirname, "public")
 
 const server = http.createServer(async (req, res) =>{
     let url = req.url;
-    if(url ==  '/' || url == ''){
-        url == 'index.html'
+    if(url ===  '/' || url === ''){
+        url = '/facebook.html'
     }
 
     switch(req.method){
