@@ -1,0 +1,28 @@
+exports.books = [
+    { id: 1, name: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
+    { id: 2, name: '1984', author: 'George Orwell', year: 1949 },
+    { id: 3, name: 'Animal Farm', author: 'George Orwell', year: 1945 },
+    { id: 4, name: 'Pride and Prejudice', author: 'Jane Austen', year: 1813 },
+    { id: 5, name: 'Moby Dick', author: 'Herman Melville', year: 1851 },
+    { id: 6, name: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
+    { id: 7, name: 'Jane Eyre', author: 'Charlotte Brontë', year: 1847 },
+    { id: 8, name: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
+    { id: 9, name: 'Wuthering Heights', author: 'Emily Brontë', year: 1847 },
+    { id: 10, name: 'Frankenstein', author: 'Mary Shelley', year: 1818 },
+    { id: 11, name: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
+    { id: 12, name: 'The Odyssey', author: 'Homer', year: -800 },
+    { id: 13, name: 'The Iliad', author: 'Homer', year: -760 },
+    { id: 14, name: 'Crime and Punishment', author: 'Fyodor Dostoevsky', year: 1866 },
+    { id: 15, name: 'The Brothers Karamazov', author: 'Fyodor Dostoevsky', year: 1880 },
+    { id: 16, name: 'Great Expectations', author: 'Charles Dickens', year: 1861 },
+    { id: 17, name: 'Oliver Twist', author: 'Charles Dickens', year: 1837 },
+    { id: 18, name: 'Les Misérables', author: 'Victor Hugo', year: 1862 },
+    { id: 19, name: 'The Count of Monte Cristo', author: 'Alexandre Dumas', year: 1844 },
+    { id: 20, name: 'War and Peace', author: 'Leo Tolstoy', year: 1869 },
+    { id: 21, name: 'Anna Karenina', author: 'Leo Tolstoy', year: 1877 },
+    { id: 22, name: 'Dracula', author: 'Bram Stoker', year: 1897 },
+    { id: 23, name: 'The Hobbit', author: 'J.R.R. Tolkien', year: 1937 },
+    { id: 24, name: 'Fahrenheit 451', author: 'Ray Bradbury', year: 1953 },
+    { id: 25, name: 'One Hundred Years of Solitude', author: 'Gabriel García Márquez', year: 1967 }
+];
+
