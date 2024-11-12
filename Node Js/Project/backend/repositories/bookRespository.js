@@ -204,36 +204,30 @@ let books = [
   ];
 
 
-exports.getBookById = (id) =>{
+  exports.getBookById = (id) => {
     return books.find(b => b.id === id);
-}
-
-
-exports.getAllBooks = () =>{
-    return books
+  };
+  
+  exports.getAllBooks = () => {
+    return books;
+  };
+  
+  exports.createBook = (book) => {
+    book.id = generateRandomString(20);  // Generate a new unique ID
+    books.push(book);
+    return book;
+  };
+  
+  exports.editBook = (id, book) => {
+    const index = books.findIndex(b => b.id === id);
     
-}
-
-
-exports.createBook = (book) =>{
-    let newId = generateRandomString(20);
-    book.id = newId;
-    books.push(book)
-    return book
-}
-
-
-exports.editBook = (id, book) =>{
-    let oldBook = this.getBookById(id);
-
-    if(oldBook){
-        oldBook = {id, ...book}
-        return oldBook
+    if (index !== -1) {
+      books[index] = { ...books[index], ...book, id };  // Update only changed properties
+      return books[index];
     }
-
     return null;
-}
-
-exports.deleteBook = (id) =>{
-    books = books.filter(b => b.id != id)
-}
+  };
+  
+  exports.deleteBook = (id) => {
+    books = books.filter(b => b.id != id);
+  };
