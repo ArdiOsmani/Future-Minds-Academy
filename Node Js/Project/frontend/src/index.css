@@ -1,13 +1,79 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* BookRow Component Styles */
+
+.book-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  margin: 16px 0;
+  background-color: #fdfdfd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.book-row:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.book-info {
+  flex: 1;
+  padding-left: 16px;
+  color: #333;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.book-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #2a7ae4;
+}
+
+.book-info p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.book-info p strong {
+  color: #222;
+}
+
+.book-info p::before {
+  content: '📘';
+  margin-right: 6px;
+  opacity: 0;
+  animation: iconSlideIn 0.4s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes iconSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .book-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
