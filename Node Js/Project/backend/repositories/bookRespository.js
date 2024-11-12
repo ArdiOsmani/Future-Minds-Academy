@@ -213,7 +213,7 @@ let books = [
   };
   
   exports.createBook = (book) => {
-    book.id = generateRandomString(20);  // Generate a new unique ID
+    book.id = generateRandomString(20);  
     books.push(book);
     return book;
   };
@@ -222,7 +222,7 @@ let books = [
     const index = books.findIndex(b => b.id === id);
     
     if (index !== -1) {
-      books[index] = { ...books[index], ...book, id };  // Update only changed properties
+      books[index] = { ...books[index], ...book, id };
       return books[index];
     }
     return null;

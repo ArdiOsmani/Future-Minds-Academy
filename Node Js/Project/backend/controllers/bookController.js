@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const booksRepository = require('../repositories/bookRepository');
+const booksRepository = require('../repositories/bookRespository');
 
 router.get('/:id', (req, res) => {
   const id = parseInt(req.params.id);
